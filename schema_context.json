@@ -1,0 +1,629 @@
+{
+  "operations.machines": {
+    "table": "operations.machines",
+    "row_count": 500,
+    "columns": [
+      {
+        "column": "machine_id",
+        "type": "TEXT",
+        "sample_values": [
+          "MCH-0313",
+          "MCH-0128",
+          "MCH-0500",
+          "MCH-0012",
+          "MCH-0203"
+        ]
+      },
+      {
+        "column": "plant_id",
+        "type": "TEXT",
+        "sample_values": [
+          "PLT-01",
+          "PLT-07",
+          "PLT-05",
+          "PLT-05",
+          "PLT-04"
+        ]
+      },
+      {
+        "column": "machine_type",
+        "type": "TEXT",
+        "sample_values": [
+          "Lathe",
+          "Welding Unit",
+          "Conveyor",
+          "Inspection Bot",
+          "Robotic Arm"
+        ]
+      },
+      {
+        "column": "model",
+        "type": "TEXT",
+        "sample_values": [
+          "SINAMICS G120",
+          "SIRIUS 3RW",
+          "SIMATIC ET200",
+          "Siemens S7-1500",
+          "SIMATIC ET200"
+        ]
+      },
+      {
+        "column": "install_date",
+        "type": "TEXT",
+        "sample_values": [
+          "2018-12-19",
+          "2020-06-24",
+          "2023-01-23",
+          "2019-11-22",
+          "2017-12-06"
+        ]
+      },
+      {
+        "column": "last_service_date",
+        "type": "TEXT",
+        "sample_values": [
+          "2019-06-13",
+          "2021-02-05",
+          "2024-12-31",
+          "2021-10-26",
+          "2019-02-21"
+        ]
+      },
+      {
+        "column": "status",
+        "type": "TEXT",
+        "sample_values": [
+          "Active",
+          "Under Maintenance",
+          "Decommissioned",
+          "Active",
+          "Active"
+        ]
+      },
+      {
+        "column": "operational_hours",
+        "type": "INTEGER",
+        "sample_values": [
+          "3589",
+          "34729",
+          "2327",
+          "4710",
+          "11342"
+        ]
+      },
+      {
+        "column": "energy_consumption_kwh",
+        "type": "REAL",
+        "sample_values": [
+          "47.57",
+          "22.04",
+          "5.06",
+          "77.21",
+          "102.74"
+        ]
+      },
+      {
+        "column": "location_zone",
+        "type": "TEXT",
+        "sample_values": [
+          "Zone-C",
+          "Zone-D",
+          "Zone-A",
+          "Zone-A",
+          "Zone-D"
+        ]
+      }
+    ],
+    "foreign_keys": [
+      "machine_id \u2192 operations.maintenance_logs.machine_id",
+      "machine_id \u2192 operations.parts_inventory.machine_id",
+      "machine_id \u2192 quality.production_batches.machine_id"
+    ],
+    "referenced_by": [
+      "quality.production_batches.plant_id"
+    ],
+    "text_summary": "Table operations.machines has 10 columns: machine_id, plant_id, machine_type, model, install_date, last_service_date, status, operational_hours, energy_consumption_kwh, location_zone. Row count: 500. Foreign keys: machine_id \u2192 operations.maintenance_logs.machine_id; machine_id \u2192 operations.parts_inventory.machine_id; machine_id \u2192 quality.production_batches.machine_id. Referenced by: quality.production_batches.plant_id."
+  },
+  "operations.maintenance_logs": {
+    "table": "operations.maintenance_logs",
+    "row_count": 100000,
+    "columns": [
+      {
+        "column": "log_id",
+        "type": "TEXT",
+        "sample_values": [
+          "LOG-0010359",
+          "LOG-0052765",
+          "LOG-0020904",
+          "LOG-0079382",
+          "LOG-0007861"
+        ]
+      },
+      {
+        "column": "machine_id",
+        "type": "TEXT",
+        "sample_values": [
+          "MCH-0364",
+          "MCH-0404",
+          "MCH-0323",
+          "MCH-0296",
+          "MCH-0061"
+        ]
+      },
+      {
+        "column": "technician_id",
+        "type": "TEXT",
+        "sample_values": [
+          "TECH-0073",
+          "TECH-0083",
+          "TECH-0162",
+          "TECH-0017",
+          "TECH-0115"
+        ]
+      },
+      {
+        "column": "log_date",
+        "type": "TEXT",
+        "sample_values": [
+          "2024-09-12",
+          "2024-07-21",
+          "2022-11-01",
+          "2023-04-04",
+          "2024-10-12"
+        ]
+      },
+      {
+        "column": "issue_type",
+        "type": "TEXT",
+        "sample_values": [
+          "Sensor Failure",
+          "Overheating",
+          "Belt Wear",
+          "Software Error",
+          "Lubrication"
+        ]
+      },
+      {
+        "column": "downtime_hrs",
+        "type": "REAL",
+        "sample_values": [
+          "3.7",
+          "0.5",
+          "1.0",
+          "2.4",
+          "0.6"
+        ]
+      },
+      {
+        "column": "repair_cost_usd",
+        "type": "REAL",
+        "sample_values": [
+          "541.46",
+          "168.33",
+          "126.35",
+          "795.74",
+          "185.93"
+        ]
+      },
+      {
+        "column": "resolved",
+        "type": "INTEGER",
+        "sample_values": [
+          "1",
+          "1",
+          "1",
+          "1",
+          "1"
+        ]
+      },
+      {
+        "column": "priority",
+        "type": "TEXT",
+        "sample_values": [
+          "Low",
+          "Low",
+          "Medium",
+          "Low",
+          "Low"
+        ]
+      },
+      {
+        "column": "notes",
+        "type": "TEXT",
+        "sample_values": [
+          "Ask president finish arm speak environmental create open center.",
+          "Note style soldier that upon.",
+          "Than rule day movie technology.",
+          "Sit Democrat involve big story.",
+          "Throw word thing main sure central go."
+        ]
+      }
+    ],
+    "foreign_keys": [],
+    "referenced_by": [
+      "operations.machines.machine_id",
+      "operations.parts_inventory.machine_id",
+      "quality.production_batches.machine_id"
+    ],
+    "text_summary": "Table operations.maintenance_logs has 10 columns: log_id, machine_id, technician_id, log_date, issue_type, downtime_hrs, repair_cost_usd, resolved, priority, notes. Row count: 100000. Foreign keys: none. Referenced by: operations.machines.machine_id; operations.parts_inventory.machine_id; quality.production_batches.machine_id."
+  },
+  "operations.parts_inventory": {
+    "table": "operations.parts_inventory",
+    "row_count": 100000,
+    "columns": [
+      {
+        "column": "part_id",
+        "type": "TEXT",
+        "sample_values": [
+          "PRT-0094098",
+          "PRT-0051466",
+          "PRT-0072023",
+          "PRT-0057210",
+          "PRT-0032589"
+        ]
+      },
+      {
+        "column": "supplier_id",
+        "type": "TEXT",
+        "sample_values": [
+          "SUP-029",
+          "SUP-014",
+          "SUP-007",
+          "SUP-047",
+          "SUP-050"
+        ]
+      },
+      {
+        "column": "machine_id",
+        "type": "TEXT",
+        "sample_values": [
+          "MCH-0124",
+          "MCH-0292",
+          "MCH-0152",
+          "MCH-0122",
+          "MCH-0297"
+        ]
+      },
+      {
+        "column": "part_name",
+        "type": "TEXT",
+        "sample_values": [
+          "Encoder Disc",
+          "Safety Relay",
+          "Encoder Disc",
+          "Power Supply Unit",
+          "Servo Motor"
+        ]
+      },
+      {
+        "column": "stock_qty",
+        "type": "INTEGER",
+        "sample_values": [
+          "226",
+          "398",
+          "81",
+          "221",
+          "347"
+        ]
+      },
+      {
+        "column": "unit_cost_usd",
+        "type": "REAL",
+        "sample_values": [
+          "1297.46",
+          "611.78",
+          "2347.67",
+          "142.62",
+          "2474.96"
+        ]
+      },
+      {
+        "column": "last_restocked",
+        "type": "TEXT",
+        "sample_values": [
+          "2021-08-16",
+          "2024-11-21",
+          "2024-04-30",
+          "2024-03-24",
+          "2021-12-02"
+        ]
+      },
+      {
+        "column": "reorder_threshold",
+        "type": "INTEGER",
+        "sample_values": [
+          "65",
+          "33",
+          "21",
+          "52",
+          "56"
+        ]
+      },
+      {
+        "column": "warehouse_location",
+        "type": "TEXT",
+        "sample_values": [
+          "WH-01",
+          "WH-01",
+          "WH-02",
+          "WH-02",
+          "WH-02"
+        ]
+      },
+      {
+        "column": "lead_time_days",
+        "type": "INTEGER",
+        "sample_values": [
+          "38",
+          "29",
+          "29",
+          "32",
+          "37"
+        ]
+      }
+    ],
+    "foreign_keys": [
+      "machine_id \u2192 operations.maintenance_logs.machine_id"
+    ],
+    "referenced_by": [
+      "operations.machines.machine_id",
+      "quality.production_batches.machine_id"
+    ],
+    "text_summary": "Table operations.parts_inventory has 10 columns: part_id, supplier_id, machine_id, part_name, stock_qty, unit_cost_usd, last_restocked, reorder_threshold, warehouse_location, lead_time_days. Row count: 100000. Foreign keys: machine_id \u2192 operations.maintenance_logs.machine_id. Referenced by: operations.machines.machine_id; quality.production_batches.machine_id."
+  },
+  "quality.production_batches": {
+    "table": "quality.production_batches",
+    "row_count": 100000,
+    "columns": [
+      {
+        "column": "batch_id",
+        "type": "TEXT",
+        "sample_values": [
+          "BCH-0060689",
+          "BCH-0095608",
+          "BCH-0046240",
+          "BCH-0040492",
+          "BCH-0021627"
+        ]
+      },
+      {
+        "column": "machine_id",
+        "type": "TEXT",
+        "sample_values": [
+          "MCH-0176",
+          "MCH-0064",
+          "MCH-0016",
+          "MCH-0466",
+          "MCH-0044"
+        ]
+      },
+      {
+        "column": "plant_id",
+        "type": "TEXT",
+        "sample_values": [
+          "PLT-02",
+          "PLT-10",
+          "PLT-09",
+          "PLT-09",
+          "PLT-05"
+        ]
+      },
+      {
+        "column": "start_time",
+        "type": "TEXT",
+        "sample_values": [
+          "2023-12-29 07:07:16",
+          "2022-03-03 13:55:11",
+          "2023-01-21 06:30:36",
+          "2023-04-10 07:45:24",
+          "2024-12-18 17:18:45"
+        ]
+      },
+      {
+        "column": "end_time",
+        "type": "TEXT",
+        "sample_values": [
+          "2023-12-29 19:07:16",
+          "2022-03-03 22:55:11",
+          "2023-01-21 17:30:36",
+          "2023-04-10 23:45:24",
+          "2024-12-18 19:18:45"
+        ]
+      },
+      {
+        "column": "units_produced",
+        "type": "INTEGER",
+        "sample_values": [
+          "600",
+          "1688",
+          "1450",
+          "1231",
+          "130"
+        ]
+      },
+      {
+        "column": "units_defective",
+        "type": "INTEGER",
+        "sample_values": [
+          "182",
+          "103",
+          "113",
+          "75",
+          "8"
+        ]
+      },
+      {
+        "column": "defect_rate",
+        "type": "REAL",
+        "sample_values": [
+          "0.3048",
+          "0.0611",
+          "0.0782",
+          "0.0612",
+          "0.0628"
+        ]
+      },
+      {
+        "column": "product_line",
+        "type": "TEXT",
+        "sample_values": [
+          "Drive",
+          "Sensor",
+          "Relay",
+          "Relay",
+          "PLC"
+        ]
+      },
+      {
+        "column": "shift",
+        "type": "TEXT",
+        "sample_values": [
+          "Morning",
+          "Morning",
+          "Night",
+          "Afternoon",
+          "Afternoon"
+        ]
+      },
+      {
+        "column": "batch_status",
+        "type": "TEXT",
+        "sample_values": [
+          "Failed",
+          "Passed",
+          "Under Review",
+          "Passed",
+          "Passed"
+        ]
+      }
+    ],
+    "foreign_keys": [
+      "plant_id \u2192 operations.machines.plant_id",
+      "machine_id \u2192 operations.maintenance_logs.machine_id",
+      "machine_id \u2192 operations.parts_inventory.machine_id"
+    ],
+    "referenced_by": [
+      "operations.machines.machine_id"
+    ],
+    "text_summary": "Table quality.production_batches has 11 columns: batch_id, machine_id, plant_id, start_time, end_time, units_produced, units_defective, defect_rate, product_line, shift, batch_status. Row count: 100000. Foreign keys: plant_id \u2192 operations.machines.plant_id; machine_id \u2192 operations.maintenance_logs.machine_id; machine_id \u2192 operations.parts_inventory.machine_id. Referenced by: operations.machines.machine_id."
+  },
+  "quality.defect_reports": {
+    "table": "quality.defect_reports",
+    "row_count": 100000,
+    "columns": [
+      {
+        "column": "defect_id",
+        "type": "TEXT",
+        "sample_values": [
+          "DEF-0036129",
+          "DEF-0080657",
+          "DEF-0090831",
+          "DEF-0020038",
+          "DEF-0047682"
+        ]
+      },
+      {
+        "column": "batch_id",
+        "type": "TEXT",
+        "sample_values": [
+          "BCH-0040691",
+          "BCH-0015045",
+          "BCH-0054503",
+          "BCH-0090577",
+          "BCH-0018535"
+        ]
+      },
+      {
+        "column": "part_id",
+        "type": "TEXT",
+        "sample_values": [
+          "PRT-0046258",
+          "PRT-0025971",
+          "PRT-0055255",
+          "PRT-0007173",
+          "PRT-0031290"
+        ]
+      },
+      {
+        "column": "defect_type",
+        "type": "TEXT",
+        "sample_values": [
+          "Material Defect",
+          "Dimensional Error",
+          "Material Defect",
+          "Assembly Fault",
+          "Assembly Fault"
+        ]
+      },
+      {
+        "column": "severity",
+        "type": "TEXT",
+        "sample_values": [
+          "Minor",
+          "Minor",
+          "Major",
+          "Major",
+          "Major"
+        ]
+      },
+      {
+        "column": "detected_at",
+        "type": "TEXT",
+        "sample_values": [
+          "2023-12-20 21:26:01",
+          "2024-04-22 02:16:20",
+          "2024-11-23 15:15:03",
+          "2022-08-21 06:40:02",
+          "2023-03-10 03:50:32"
+        ]
+      },
+      {
+        "column": "detection_method",
+        "type": "TEXT",
+        "sample_values": [
+          "Ultrasonic",
+          "Ultrasonic",
+          "CMM",
+          "Ultrasonic",
+          "X-Ray"
+        ]
+      },
+      {
+        "column": "rework_required",
+        "type": "INTEGER",
+        "sample_values": [
+          "0",
+          "0",
+          "1",
+          "0",
+          "1"
+        ]
+      },
+      {
+        "column": "scrap_cost_usd",
+        "type": "REAL",
+        "sample_values": [
+          "166.0",
+          "86.84",
+          "87.35",
+          "257.66",
+          "330.57"
+        ]
+      },
+      {
+        "column": "root_cause",
+        "type": "TEXT",
+        "sample_values": [
+          "Supplier Material",
+          "Supplier Material",
+          "Operator Error",
+          "Machine Wear",
+          "Supplier Material"
+        ]
+      }
+    ],
+    "foreign_keys": [],
+    "referenced_by": [],
+    "text_summary": "Table quality.defect_reports has 10 columns: defect_id, batch_id, part_id, defect_type, severity, detected_at, detection_method, rework_required, scrap_cost_usd, root_cause. Row count: 100000. Foreign keys: none. Referenced by: none."
+  }
+}

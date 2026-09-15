@@ -1,0 +1,830 @@
+name: MySchema
+description: MySchema
+id: https://w3id.org/MySchema
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  MySchema: https://w3id.org/MySchema
+default_prefix: MySchema
+enums:
+  plant_id_enum:
+    from_schema: https://w3id.org/MySchema
+    permissible_values:
+      PLT-03:
+        description: PLT-03
+      PLT-10:
+        description: PLT-10
+      PLT-05:
+        description: PLT-05
+      PLT-08:
+        description: PLT-08
+      PLT-07:
+        description: PLT-07
+      PLT-09:
+        description: PLT-09
+      PLT-02:
+        description: PLT-02
+      PLT-04:
+        description: PLT-04
+      PLT-01:
+        description: PLT-01
+      PLT-06:
+        description: PLT-06
+  machine_type_enum:
+    from_schema: https://w3id.org/MySchema
+    permissible_values:
+      Welding Unit:
+        description: Welding Unit
+      CNC Mill:
+        description: CNC Mill
+      Lathe:
+        description: Lathe
+      Press:
+        description: Press
+      Conveyor:
+        description: Conveyor
+      Robotic Arm:
+        description: Robotic Arm
+      Inspection Bot:
+        description: Inspection Bot
+  model_enum:
+    from_schema: https://w3id.org/MySchema
+    permissible_values:
+      SIRIUS 3RW:
+        description: SIRIUS 3RW
+      SIMATIC ET200:
+        description: SIMATIC ET200
+      SINUMERIK 840D:
+        description: SINUMERIK 840D
+      SIMOTION D:
+        description: SIMOTION D
+      SINAMICS G120:
+        description: SINAMICS G120
+      Siemens S7-1500:
+        description: Siemens S7-1500
+  status_enum:
+    from_schema: https://w3id.org/MySchema
+    permissible_values:
+      Decommissioned:
+        description: Decommissioned
+      Active:
+        description: Active
+      Idle:
+        description: Idle
+      Under Maintenance:
+        description: Under Maintenance
+  location_zone_enum:
+    from_schema: https://w3id.org/MySchema
+    permissible_values:
+      Zone-D:
+        description: Zone-D
+      Zone-C:
+        description: Zone-C
+      Zone-A:
+        description: Zone-A
+      Zone-B:
+        description: Zone-B
+  issue_type_enum:
+    from_schema: https://w3id.org/MySchema
+    permissible_values:
+      Sensor Failure:
+        description: Sensor Failure
+      Belt Wear:
+        description: Belt Wear
+      Vibration:
+        description: Vibration
+      Software Error:
+        description: Software Error
+      Electrical Fault:
+        description: Electrical Fault
+      Overheating:
+        description: Overheating
+      Lubrication:
+        description: Lubrication
+  resolved_enum:
+    from_schema: https://w3id.org/MySchema
+    permissible_values:
+      'True':
+        description: 'True'
+      'False':
+        description: 'False'
+  priority_enum:
+    from_schema: https://w3id.org/MySchema
+    permissible_values:
+      Medium:
+        description: Medium
+      Low:
+        description: Low
+      High:
+        description: High
+      Critical:
+        description: Critical
+  supplier_id_enum:
+    from_schema: https://w3id.org/MySchema
+    permissible_values:
+      SUP-019:
+        description: SUP-019
+      SUP-045:
+        description: SUP-045
+      SUP-012:
+        description: SUP-012
+      SUP-046:
+        description: SUP-046
+      SUP-035:
+        description: SUP-035
+      SUP-050:
+        description: SUP-050
+      SUP-032:
+        description: SUP-032
+      SUP-024:
+        description: SUP-024
+      SUP-014:
+        description: SUP-014
+      SUP-002:
+        description: SUP-002
+      SUP-015:
+        description: SUP-015
+      SUP-007:
+        description: SUP-007
+      SUP-013:
+        description: SUP-013
+      SUP-011:
+        description: SUP-011
+      SUP-041:
+        description: SUP-041
+      SUP-017:
+        description: SUP-017
+      SUP-030:
+        description: SUP-030
+      SUP-049:
+        description: SUP-049
+      SUP-040:
+        description: SUP-040
+      SUP-029:
+        description: SUP-029
+      SUP-018:
+        description: SUP-018
+      SUP-038:
+        description: SUP-038
+      SUP-009:
+        description: SUP-009
+      SUP-033:
+        description: SUP-033
+      SUP-016:
+        description: SUP-016
+      SUP-026:
+        description: SUP-026
+      SUP-008:
+        description: SUP-008
+      SUP-043:
+        description: SUP-043
+      SUP-006:
+        description: SUP-006
+      SUP-047:
+        description: SUP-047
+      SUP-001:
+        description: SUP-001
+      SUP-031:
+        description: SUP-031
+      SUP-021:
+        description: SUP-021
+      SUP-023:
+        description: SUP-023
+      SUP-044:
+        description: SUP-044
+      SUP-048:
+        description: SUP-048
+      SUP-042:
+        description: SUP-042
+      SUP-010:
+        description: SUP-010
+      SUP-025:
+        description: SUP-025
+      SUP-037:
+        description: SUP-037
+      SUP-039:
+        description: SUP-039
+      SUP-027:
+        description: SUP-027
+      SUP-036:
+        description: SUP-036
+      SUP-003:
+        description: SUP-003
+      SUP-034:
+        description: SUP-034
+      SUP-028:
+        description: SUP-028
+      SUP-004:
+        description: SUP-004
+      SUP-022:
+        description: SUP-022
+      SUP-005:
+        description: SUP-005
+      SUP-020:
+        description: SUP-020
+  part_name_enum:
+    from_schema: https://w3id.org/MySchema
+    permissible_values:
+      Control Board:
+        description: Control Board
+      Coolant Pump:
+        description: Coolant Pump
+      Bearing Assembly:
+        description: Bearing Assembly
+      Encoder Disc:
+        description: Encoder Disc
+      Proximity Sensor:
+        description: Proximity Sensor
+      Drive Belt:
+        description: Drive Belt
+      Power Supply Unit:
+        description: Power Supply Unit
+      Hydraulic Seal:
+        description: Hydraulic Seal
+      Servo Motor:
+        description: Servo Motor
+      Safety Relay:
+        description: Safety Relay
+  warehouse_location_enum:
+    from_schema: https://w3id.org/MySchema
+    permissible_values:
+      WH-02:
+        description: WH-02
+      WH-03:
+        description: WH-03
+      WH-04:
+        description: WH-04
+      WH-01:
+        description: WH-01
+  product_line_enum:
+    from_schema: https://w3id.org/MySchema
+    permissible_values:
+      Sensor:
+        description: Sensor
+      HMI:
+        description: HMI
+      Drive:
+        description: Drive
+      Relay:
+        description: Relay
+      PLC:
+        description: PLC
+  shift_enum:
+    from_schema: https://w3id.org/MySchema
+    permissible_values:
+      Afternoon:
+        description: Afternoon
+      Night:
+        description: Night
+      Morning:
+        description: Morning
+  batch_status_enum:
+    from_schema: https://w3id.org/MySchema
+    permissible_values:
+      Failed:
+        description: Failed
+      Passed:
+        description: Passed
+      Under Review:
+        description: Under Review
+  defect_type_enum:
+    from_schema: https://w3id.org/MySchema
+    permissible_values:
+      Weld Failure:
+        description: Weld Failure
+      Calibration Drift:
+        description: Calibration Drift
+      Material Defect:
+        description: Material Defect
+      Surface Crack:
+        description: Surface Crack
+      Dimensional Error:
+        description: Dimensional Error
+      Assembly Fault:
+        description: Assembly Fault
+  severity_enum:
+    from_schema: https://w3id.org/MySchema
+    permissible_values:
+      Major:
+        description: Major
+      Minor:
+        description: Minor
+      Critical:
+        description: Critical
+  detection_method_enum:
+    from_schema: https://w3id.org/MySchema
+    permissible_values:
+      CMM:
+        description: CMM
+      X-Ray:
+        description: X-Ray
+      Visual Inspection:
+        description: Visual Inspection
+      Ultrasonic:
+        description: Ultrasonic
+      Automated Vision:
+        description: Automated Vision
+  rework_required_enum:
+    from_schema: https://w3id.org/MySchema
+    permissible_values:
+      'True':
+        description: 'True'
+      'False':
+        description: 'False'
+  root_cause_enum:
+    from_schema: https://w3id.org/MySchema
+    permissible_values:
+      Environmental:
+        description: Environmental
+      Process Drift:
+        description: Process Drift
+      Operator Error:
+        description: Operator Error
+      Supplier Material:
+        description: Supplier Material
+      Machine Wear:
+        description: Machine Wear
+slots:
+  machine_id:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '500'
+    examples:
+    - value: MCH-0083
+    from_schema: https://w3id.org/MySchema
+    identifier: true
+    range: string
+  plant_id:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '10'
+    examples:
+    - value: PLT-02
+    from_schema: https://w3id.org/MySchema
+    range: plant_id_enum
+  machine_type:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '7'
+    examples:
+    - value: Inspection Bot
+    from_schema: https://w3id.org/MySchema
+    range: machine_type_enum
+  model:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '6'
+    examples:
+    - value: SIRIUS 3RW
+    from_schema: https://w3id.org/MySchema
+    range: model_enum
+  install_date:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '471'
+    examples:
+    - value: '2015-10-10'
+    from_schema: https://w3id.org/MySchema
+    range: date
+  last_service_date:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '435'
+    examples:
+    - value: '2016-01-28'
+    from_schema: https://w3id.org/MySchema
+    range: date
+  status:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '4'
+    examples:
+    - value: Active
+    from_schema: https://w3id.org/MySchema
+    range: status_enum
+  operational_hours:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '498'
+    examples:
+    - value: '32624'
+    from_schema: https://w3id.org/MySchema
+    range: integer
+  energy_consumption_kwh:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '491'
+    examples:
+    - value: '112.31'
+    from_schema: https://w3id.org/MySchema
+    range: float
+  location_zone:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '4'
+    examples:
+    - value: Zone-A
+    from_schema: https://w3id.org/MySchema
+    range: location_zone_enum
+  log_id:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '100000'
+    examples:
+    - value: LOG-0100000
+    from_schema: https://w3id.org/MySchema
+    identifier: true
+    range: string
+  technician_id:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '200'
+    examples:
+    - value: TECH-0041
+    from_schema: https://w3id.org/MySchema
+    range: string
+  log_date:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '1095'
+    examples:
+    - value: '2022-03-22'
+    from_schema: https://w3id.org/MySchema
+    range: date
+  issue_type:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '7'
+    examples:
+    - value: Vibration
+    from_schema: https://w3id.org/MySchema
+    range: issue_type_enum
+  downtime_hrs:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '325'
+    examples:
+    - value: '1.0'
+    from_schema: https://w3id.org/MySchema
+    range: float
+  repair_cost_usd:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '74210'
+    examples:
+    - value: '174.64'
+    from_schema: https://w3id.org/MySchema
+    range: float
+  resolved:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '2'
+    examples:
+    - value: 'True'
+    from_schema: https://w3id.org/MySchema
+    range: resolved_enum
+  priority:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '4'
+    examples:
+    - value: Low
+    from_schema: https://w3id.org/MySchema
+    range: priority_enum
+  notes:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '100000'
+    examples:
+    - value: Save require last rather food fine up none.
+    from_schema: https://w3id.org/MySchema
+    range: string
+  part_id:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '100000'
+    examples:
+    - value: PRT-0100000
+    from_schema: https://w3id.org/MySchema
+    identifier: true
+    range: string
+  supplier_id:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '50'
+    examples:
+    - value: SUP-029
+    from_schema: https://w3id.org/MySchema
+    range: supplier_id_enum
+  part_name:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '10'
+    examples:
+    - value: Proximity Sensor
+    from_schema: https://w3id.org/MySchema
+    range: part_name_enum
+  stock_qty:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '500'
+    examples:
+    - value: '37'
+    from_schema: https://w3id.org/MySchema
+    range: integer
+  unit_cost_usd:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '82372'
+    examples:
+    - value: '1341.7'
+    from_schema: https://w3id.org/MySchema
+    range: float
+  last_restocked:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '1460'
+    examples:
+    - value: '2022-06-17'
+    from_schema: https://w3id.org/MySchema
+    range: date
+  reorder_threshold:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '90'
+    examples:
+    - value: '58'
+    from_schema: https://w3id.org/MySchema
+    range: integer
+  warehouse_location:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '4'
+    examples:
+    - value: WH-02
+    from_schema: https://w3id.org/MySchema
+    range: warehouse_location_enum
+  lead_time_days:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '44'
+    examples:
+    - value: '37'
+    from_schema: https://w3id.org/MySchema
+    range: integer
+  batch_id:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '100000'
+    examples:
+    - value: BCH-0100000
+    from_schema: https://w3id.org/MySchema
+    identifier: true
+    range: string
+  start_time:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '99943'
+    examples:
+    - value: '2024-07-24 04:27:10'
+    from_schema: https://w3id.org/MySchema
+    range: datetime
+  end_time:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '99954'
+    examples:
+    - value: '2024-07-24 12:27:10'
+    from_schema: https://w3id.org/MySchema
+    range: datetime
+  units_produced:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '1950'
+    examples:
+    - value: '291'
+    from_schema: https://w3id.org/MySchema
+    range: integer
+  units_defective:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '674'
+    examples:
+    - value: '63'
+    from_schema: https://w3id.org/MySchema
+    range: integer
+  defect_rate:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '3611'
+    examples:
+    - value: '0.2193'
+    from_schema: https://w3id.org/MySchema
+    range: float
+  product_line:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '5'
+    examples:
+    - value: PLC
+    from_schema: https://w3id.org/MySchema
+    range: product_line_enum
+  shift:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '3'
+    examples:
+    - value: Night
+    from_schema: https://w3id.org/MySchema
+    range: shift_enum
+  batch_status:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '3'
+    examples:
+    - value: Failed
+    from_schema: https://w3id.org/MySchema
+    range: batch_status_enum
+  defect_id:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '100000'
+    examples:
+    - value: DEF-0100000
+    from_schema: https://w3id.org/MySchema
+    identifier: true
+    range: string
+  defect_type:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '6'
+    examples:
+    - value: Dimensional Error
+    from_schema: https://w3id.org/MySchema
+    range: defect_type_enum
+  severity:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '3'
+    examples:
+    - value: Minor
+    from_schema: https://w3id.org/MySchema
+    range: severity_enum
+  detected_at:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '99941'
+    examples:
+    - value: '2024-02-17 05:23:30'
+    from_schema: https://w3id.org/MySchema
+    range: datetime
+  detection_method:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '5'
+    examples:
+    - value: CMM
+    from_schema: https://w3id.org/MySchema
+    range: detection_method_enum
+  rework_required:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '2'
+    examples:
+    - value: 'False'
+    from_schema: https://w3id.org/MySchema
+    range: rework_required_enum
+  scrap_cost_usd:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '32464'
+    examples:
+    - value: '51.07'
+    from_schema: https://w3id.org/MySchema
+    range: float
+  root_cause:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '5'
+    examples:
+    - value: Machine Wear
+    from_schema: https://w3id.org/MySchema
+    range: root_cause_enum
+classes:
+  machines:
+    from_schema: https://w3id.org/MySchema
+    slots:
+    - machine_id
+    - plant_id
+    - machine_type
+    - model
+    - install_date
+    - last_service_date
+    - status
+    - operational_hours
+    - energy_consumption_kwh
+    - location_zone
+  maintenance_logs:
+    from_schema: https://w3id.org/MySchema
+    slots:
+    - log_id
+    - machine_id
+    - technician_id
+    - log_date
+    - issue_type
+    - downtime_hrs
+    - repair_cost_usd
+    - resolved
+    - priority
+    - notes
+    unique_keys:
+      notes_key:
+        unique_key_name: notes_key
+        unique_key_slots:
+        - notes
+  parts_inventory:
+    from_schema: https://w3id.org/MySchema
+    slots:
+    - part_id
+    - supplier_id
+    - machine_id
+    - part_name
+    - stock_qty
+    - unit_cost_usd
+    - last_restocked
+    - reorder_threshold
+    - warehouse_location
+    - lead_time_days
+  production_batches:
+    from_schema: https://w3id.org/MySchema
+    slots:
+    - batch_id
+    - machine_id
+    - plant_id
+    - start_time
+    - end_time
+    - units_produced
+    - units_defective
+    - defect_rate
+    - product_line
+    - shift
+    - batch_status
+  defect_reports:
+    from_schema: https://w3id.org/MySchema
+    slots:
+    - defect_id
+    - batch_id
+    - part_id
+    - defect_type
+    - severity
+    - detected_at
+    - detection_method
+    - rework_required
+    - scrap_cost_usd
+    - root_cause

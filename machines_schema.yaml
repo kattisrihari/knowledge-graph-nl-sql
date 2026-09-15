@@ -1,0 +1,177 @@
+name: MySchema
+description: MySchema
+id: https://w3id.org/MySchema
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  MySchema: https://w3id.org/MySchema
+default_prefix: MySchema
+enums:
+  plant_id_enum:
+    permissible_values:
+      PLT-08:
+        description: PLT-08
+      PLT-06:
+        description: PLT-06
+      PLT-09:
+        description: PLT-09
+      PLT-04:
+        description: PLT-04
+      PLT-07:
+        description: PLT-07
+      PLT-10:
+        description: PLT-10
+      PLT-02:
+        description: PLT-02
+      PLT-03:
+        description: PLT-03
+      PLT-01:
+        description: PLT-01
+      PLT-05:
+        description: PLT-05
+  machine_type_enum:
+    permissible_values:
+      Welding Unit:
+        description: Welding Unit
+      Robotic Arm:
+        description: Robotic Arm
+      Press:
+        description: Press
+      Lathe:
+        description: Lathe
+      CNC Mill:
+        description: CNC Mill
+      Conveyor:
+        description: Conveyor
+      Inspection Bot:
+        description: Inspection Bot
+  model_enum:
+    permissible_values:
+      SINAMICS G120:
+        description: SINAMICS G120
+      SIRIUS 3RW:
+        description: SIRIUS 3RW
+      Siemens S7-1500:
+        description: Siemens S7-1500
+      SINUMERIK 840D:
+        description: SINUMERIK 840D
+      SIMOTION D:
+        description: SIMOTION D
+      SIMATIC ET200:
+        description: SIMATIC ET200
+  status_enum:
+    permissible_values:
+      Idle:
+        description: Idle
+      Decommissioned:
+        description: Decommissioned
+      Under Maintenance:
+        description: Under Maintenance
+      Active:
+        description: Active
+  location_zone_enum:
+    permissible_values:
+      Zone-A:
+        description: Zone-A
+      Zone-C:
+        description: Zone-C
+      Zone-B:
+        description: Zone-B
+      Zone-D:
+        description: Zone-D
+slots:
+  machine_id:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '500'
+    examples:
+    - value: MCH-0083
+    identifier: true
+    range: string
+  plant_id:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '10'
+    examples:
+    - value: PLT-02
+    range: plant_id_enum
+  machine_type:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '7'
+    examples:
+    - value: Inspection Bot
+    range: machine_type_enum
+  model:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '6'
+    examples:
+    - value: SIRIUS 3RW
+    range: model_enum
+  install_date:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '471'
+    examples:
+    - value: '2015-10-10'
+    range: date
+  last_service_date:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '435'
+    examples:
+    - value: '2016-01-28'
+    range: date
+  status:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '4'
+    examples:
+    - value: Active
+    range: status_enum
+  operational_hours:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '498'
+    examples:
+    - value: '32624'
+    range: integer
+  energy_consumption_kwh:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '491'
+    examples:
+    - value: '112.31'
+    range: float
+  location_zone:
+    annotations:
+      num_distinct_values:
+        tag: num_distinct_values
+        value: '4'
+    examples:
+    - value: Zone-A
+    range: location_zone_enum
+classes:
+  Observation:
+    slots:
+    - machine_id
+    - plant_id
+    - machine_type
+    - model
+    - install_date
+    - last_service_date
+    - status
+    - operational_hours
+    - energy_consumption_kwh
+    - location_zone

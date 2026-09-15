@@ -1,0 +1,65 @@
+[
+  {
+    "from_table": "operations.machines",
+    "from_col": "machine_id",
+    "to_table": "operations.maintenance_logs",
+    "to_col": "machine_id",
+    "overlap_ratio": 0.421,
+    "confidence": "medium",
+    "cross_db": false
+  },
+  {
+    "from_table": "operations.machines",
+    "from_col": "machine_id",
+    "to_table": "operations.parts_inventory",
+    "to_col": "machine_id",
+    "overlap_ratio": 0.371,
+    "confidence": "medium",
+    "cross_db": false
+  },
+  {
+    "from_table": "operations.machines",
+    "from_col": "machine_id",
+    "to_table": "quality.production_batches",
+    "to_col": "machine_id",
+    "overlap_ratio": 0.36,
+    "confidence": "medium",
+    "cross_db": true
+  },
+  {
+    "from_table": "quality.production_batches",
+    "from_col": "plant_id",
+    "to_table": "operations.machines",
+    "to_col": "plant_id",
+    "overlap_ratio": 1.0,
+    "confidence": "high",
+    "cross_db": true
+  },
+  {
+    "from_table": "operations.parts_inventory",
+    "from_col": "machine_id",
+    "to_table": "operations.maintenance_logs",
+    "to_col": "machine_id",
+    "overlap_ratio": 0.358,
+    "confidence": "medium",
+    "cross_db": false
+  },
+  {
+    "from_table": "quality.production_batches",
+    "from_col": "machine_id",
+    "to_table": "operations.maintenance_logs",
+    "to_col": "machine_id",
+    "overlap_ratio": 0.346,
+    "confidence": "medium",
+    "cross_db": true
+  },
+  {
+    "from_table": "quality.production_batches",
+    "from_col": "machine_id",
+    "to_table": "operations.parts_inventory",
+    "to_col": "machine_id",
+    "overlap_ratio": 0.305,
+    "confidence": "medium",
+    "cross_db": true
+  }
+]

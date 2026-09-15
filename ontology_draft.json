@@ -1,0 +1,629 @@
+{
+  "metadata": {
+    "version": "1.0-draft",
+    "source_schema": "siemens_schema.yaml",
+    "domain": "Industrial Manufacturing",
+    "client": "Siemens",
+    "annotation_instructions": "Search 'AUTO_PROPOSED' to find all edges needing review. Edit 'relationship' verb and 'description' as needed. Set 'annotation_status' to 'REVIEWED' when confirmed. Do not remove 'annotation_note' \u2014 keep for audit trail."
+  },
+  "nodes": [
+    {
+      "id": "operations.machines",
+      "label": "Machine",
+      "table": "machines",
+      "schema": "operations",
+      "description": "Physical manufacturing asset deployed on the factory floor (CNC mills, robotic arms, welding units, etc.)",
+      "key_attributes": [
+        "machine_id",
+        "plant_id",
+        "machine_type",
+        "model",
+        "status",
+        "location_zone"
+      ]
+    },
+    {
+      "id": "operations.maintenance_logs",
+      "label": "MaintenanceEvent",
+      "table": "maintenance_logs",
+      "schema": "operations",
+      "description": "Record of a maintenance intervention performed on a machine, including issue type, downtime, and repair cost",
+      "key_attributes": [
+        "log_id",
+        "machine_id",
+        "issue_type",
+        "resolved",
+        "priority"
+      ]
+    },
+    {
+      "id": "operations.parts_inventory",
+      "label": "Part",
+      "table": "parts_inventory",
+      "schema": "operations",
+      "description": "Spare part or component stocked in a warehouse and compatible with one or more machines",
+      "key_attributes": [
+        "part_id",
+        "supplier_id",
+        "machine_id",
+        "part_name",
+        "warehouse_location"
+      ]
+    },
+    {
+      "id": "quality.production_batches",
+      "label": "ProductionBatch",
+      "table": "production_batches",
+      "schema": "quality",
+      "description": "A discrete production run executed by a machine, tracking units produced, defect rate, and shift",
+      "key_attributes": [
+        "batch_id",
+        "machine_id",
+        "plant_id",
+        "product_line",
+        "shift",
+        "batch_status"
+      ]
+    },
+    {
+      "id": "quality.defect_reports",
+      "label": "DefectReport",
+      "table": "defect_reports",
+      "schema": "quality",
+      "description": "Quality defect identified during or after a production batch, linked to a specific part and root cause",
+      "key_attributes": [
+        "defect_id",
+        "batch_id",
+        "part_id",
+        "defect_type",
+        "severity",
+        "detection_method",
+        "rework_required",
+        "root_cause"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from_table": "operations.maintenance_logs",
+      "to_table": "operations.machines",
+      "from_label": "MaintenanceEvent",
+      "to_label": "Machine",
+      "join_key": "machine_id",
+      "relationship": "LOGGED_FOR",
+      "description": "A maintenance event is recorded against the machine it was performed on",
+      "cardinality": "many_to_one",
+      "cross_db": false,
+      "include_as_attribute": true,
+      "annotation_status": "AUTO_PROPOSED",
+      "annotation_note": "Annotator: confirm verb. Alternatives: PERFORMED_ON, TRIGGERED_BY, RECORDED_FOR"
+    },
+    {
+      "from_table": "operations.parts_inventory",
+      "to_table": "operations.machines",
+      "from_label": "Part",
+      "to_label": "Machine",
+      "join_key": "machine_id",
+      "relationship": "COMPATIBLE_WITH",
+      "description": "A part is stocked as compatible with or designated for a specific machine",
+      "cardinality": "many_to_one",
+      "cross_db": false,
+      "include_as_attribute": true,
+      "annotation_status": "AUTO_PROPOSED",
+      "annotation_note": "Annotator: confirm verb. Alternatives: USED_IN, DESIGNATED_FOR, SERVICED_BY"
+    },
+    {
+      "from_table": "quality.production_batches",
+      "to_table": "operations.machines",
+      "from_label": "ProductionBatch",
+      "to_label": "Machine",
+      "join_key": "machine_id",
+      "relationship": "PRODUCED_BY",
+      "description": "A production batch is executed by a specific machine on the factory floor",
+      "cardinality": "many_to_one",
+      "cross_db": true,
+      "include_as_attribute": true,
+      "annotation_status": "AUTO_PROPOSED",
+      "annotation_note": "Annotator: confirm verb. Alternatives: EXECUTED_BY, RUN_ON, ASSIGNED_TO"
+    },
+    {
+      "from_table": "quality.production_batches",
+      "to_table": "operations.machines",
+      "from_label": "ProductionBatch",
+      "to_label": "Machine",
+      "join_key": "plant_id",
+      "relationship": "OCCURS_AT",
+      "description": "A production batch occurs at the same plant as the machine \u2014 plant_id is also retained as a shared attribute on both nodes",
+      "cardinality": "many_to_one",
+      "cross_db": true,
+      "include_as_attribute": true,
+      "annotation_status": "AUTO_PROPOSED",
+      "annotation_note": "Annotator: plant_id is a shared attribute on both Machine and ProductionBatch. This edge captures the co-location relationship. Alternatives: LOCATED_AT, BELONGS_TO_PLANT. Can be removed if deemed redundant."
+    },
+    {
+      "from_table": "quality.defect_reports",
+      "to_table": "quality.production_batches",
+      "from_label": "DefectReport",
+      "to_label": "ProductionBatch",
+      "join_key": "batch_id",
+      "relationship": "BELONGS_TO",
+      "description": "A defect report is raised against the production batch in which the defect was detected",
+      "cardinality": "many_to_one",
+      "cross_db": false,
+      "include_as_attribute": true,
+      "annotation_status": "AUTO_PROPOSED",
+      "annotation_note": "Annotator: confirm verb. Alternatives: DETECTED_IN, RAISED_FOR, PART_OF"
+    },
+    {
+      "from_table": "quality.defect_reports",
+      "to_table": "operations.parts_inventory",
+      "from_label": "DefectReport",
+      "to_label": "Part",
+      "join_key": "part_id",
+      "relationship": "CAUSED_BY",
+      "description": "A defect is attributed to a specific part that failed or was out of specification",
+      "cardinality": "many_to_one",
+      "cross_db": true,
+      "include_as_attribute": true,
+      "annotation_status": "AUTO_PROPOSED",
+      "annotation_note": "Annotator: confirm verb. Note directionality \u2014 defect report points TO the part. Alternatives: LINKED_TO_PART, INVOLVES, ORIGINATED_FROM"
+    }
+  ],
+  "slot_context": {
+    "operations.machines": {
+      "machine_id": {
+        "type": "string",
+        "example": "MCH-0083",
+        "identifier": true
+      },
+      "plant_id": {
+        "type": "enum",
+        "values": [
+          "PLT-03",
+          "PLT-10",
+          "PLT-05",
+          "PLT-08",
+          "PLT-07",
+          "PLT-09",
+          "PLT-02",
+          "PLT-04",
+          "PLT-01",
+          "PLT-06"
+        ],
+        "example": "PLT-02",
+        "identifier": false
+      },
+      "machine_type": {
+        "type": "enum",
+        "values": [
+          "Welding Unit",
+          "CNC Mill",
+          "Lathe",
+          "Press",
+          "Conveyor",
+          "Robotic Arm",
+          "Inspection Bot"
+        ],
+        "example": "Inspection Bot",
+        "identifier": false
+      },
+      "model": {
+        "type": "enum",
+        "values": [
+          "SIRIUS 3RW",
+          "SIMATIC ET200",
+          "SINUMERIK 840D",
+          "SIMOTION D",
+          "SINAMICS G120",
+          "Siemens S7-1500"
+        ],
+        "example": "SIRIUS 3RW",
+        "identifier": false
+      },
+      "install_date": {
+        "type": "date",
+        "example": "2015-10-10",
+        "identifier": false
+      },
+      "last_service_date": {
+        "type": "date",
+        "example": "2016-01-28",
+        "identifier": false
+      },
+      "status": {
+        "type": "enum",
+        "values": [
+          "Decommissioned",
+          "Active",
+          "Idle",
+          "Under Maintenance"
+        ],
+        "example": "Active",
+        "identifier": false
+      },
+      "operational_hours": {
+        "type": "integer",
+        "example": "32624",
+        "identifier": false
+      },
+      "energy_consumption_kwh": {
+        "type": "float",
+        "example": "112.31",
+        "identifier": false
+      },
+      "location_zone": {
+        "type": "enum",
+        "values": [
+          "Zone-D",
+          "Zone-C",
+          "Zone-A",
+          "Zone-B"
+        ],
+        "example": "Zone-A",
+        "identifier": false
+      }
+    },
+    "operations.maintenance_logs": {
+      "log_id": {
+        "type": "string",
+        "example": "LOG-0100000",
+        "identifier": true
+      },
+      "machine_id": {
+        "type": "string",
+        "example": "MCH-0083",
+        "identifier": true
+      },
+      "technician_id": {
+        "type": "string",
+        "example": "TECH-0041",
+        "identifier": false
+      },
+      "log_date": {
+        "type": "date",
+        "example": "2022-03-22",
+        "identifier": false
+      },
+      "issue_type": {
+        "type": "enum",
+        "values": [
+          "Sensor Failure",
+          "Belt Wear",
+          "Vibration",
+          "Software Error",
+          "Electrical Fault",
+          "Overheating",
+          "Lubrication"
+        ],
+        "example": "Vibration",
+        "identifier": false
+      },
+      "downtime_hrs": {
+        "type": "float",
+        "example": "1.0",
+        "identifier": false
+      },
+      "repair_cost_usd": {
+        "type": "float",
+        "example": "174.64",
+        "identifier": false
+      },
+      "resolved": {
+        "type": "enum",
+        "values": [
+          "True",
+          "False"
+        ],
+        "example": "True",
+        "identifier": false
+      },
+      "priority": {
+        "type": "enum",
+        "values": [
+          "Medium",
+          "Low",
+          "High",
+          "Critical"
+        ],
+        "example": "Low",
+        "identifier": false
+      },
+      "notes": {
+        "type": "string",
+        "example": "Save require last rather food fine up none.",
+        "identifier": false
+      }
+    },
+    "operations.parts_inventory": {
+      "part_id": {
+        "type": "string",
+        "example": "PRT-0100000",
+        "identifier": true
+      },
+      "supplier_id": {
+        "type": "enum",
+        "values": [
+          "SUP-019",
+          "SUP-045",
+          "SUP-012",
+          "SUP-046",
+          "SUP-035",
+          "SUP-050",
+          "SUP-032",
+          "SUP-024",
+          "SUP-014",
+          "SUP-002",
+          "SUP-015",
+          "SUP-007",
+          "SUP-013",
+          "SUP-011",
+          "SUP-041",
+          "SUP-017",
+          "SUP-030",
+          "SUP-049",
+          "SUP-040",
+          "SUP-029",
+          "SUP-018",
+          "SUP-038",
+          "SUP-009",
+          "SUP-033",
+          "SUP-016",
+          "SUP-026",
+          "SUP-008",
+          "SUP-043",
+          "SUP-006",
+          "SUP-047",
+          "SUP-001",
+          "SUP-031",
+          "SUP-021",
+          "SUP-023",
+          "SUP-044",
+          "SUP-048",
+          "SUP-042",
+          "SUP-010",
+          "SUP-025",
+          "SUP-037",
+          "SUP-039",
+          "SUP-027",
+          "SUP-036",
+          "SUP-003",
+          "SUP-034",
+          "SUP-028",
+          "SUP-004",
+          "SUP-022",
+          "SUP-005",
+          "SUP-020"
+        ],
+        "example": "SUP-029",
+        "identifier": false
+      },
+      "machine_id": {
+        "type": "string",
+        "example": "MCH-0083",
+        "identifier": true
+      },
+      "part_name": {
+        "type": "enum",
+        "values": [
+          "Control Board",
+          "Coolant Pump",
+          "Bearing Assembly",
+          "Encoder Disc",
+          "Proximity Sensor",
+          "Drive Belt",
+          "Power Supply Unit",
+          "Hydraulic Seal",
+          "Servo Motor",
+          "Safety Relay"
+        ],
+        "example": "Proximity Sensor",
+        "identifier": false
+      },
+      "stock_qty": {
+        "type": "integer",
+        "example": "37",
+        "identifier": false
+      },
+      "unit_cost_usd": {
+        "type": "float",
+        "example": "1341.7",
+        "identifier": false
+      },
+      "last_restocked": {
+        "type": "date",
+        "example": "2022-06-17",
+        "identifier": false
+      },
+      "reorder_threshold": {
+        "type": "integer",
+        "example": "58",
+        "identifier": false
+      },
+      "warehouse_location": {
+        "type": "enum",
+        "values": [
+          "WH-02",
+          "WH-03",
+          "WH-04",
+          "WH-01"
+        ],
+        "example": "WH-02",
+        "identifier": false
+      },
+      "lead_time_days": {
+        "type": "integer",
+        "example": "37",
+        "identifier": false
+      }
+    },
+    "quality.production_batches": {
+      "batch_id": {
+        "type": "string",
+        "example": "BCH-0100000",
+        "identifier": true
+      },
+      "machine_id": {
+        "type": "string",
+        "example": "MCH-0083",
+        "identifier": true
+      },
+      "plant_id": {
+        "type": "enum",
+        "values": [
+          "PLT-03",
+          "PLT-10",
+          "PLT-05",
+          "PLT-08",
+          "PLT-07",
+          "PLT-09",
+          "PLT-02",
+          "PLT-04",
+          "PLT-01",
+          "PLT-06"
+        ],
+        "example": "PLT-02",
+        "identifier": false
+      },
+      "start_time": {
+        "type": "datetime",
+        "example": "2024-07-24 04:27:10",
+        "identifier": false
+      },
+      "end_time": {
+        "type": "datetime",
+        "example": "2024-07-24 12:27:10",
+        "identifier": false
+      },
+      "units_produced": {
+        "type": "integer",
+        "example": "291",
+        "identifier": false
+      },
+      "units_defective": {
+        "type": "integer",
+        "example": "63",
+        "identifier": false
+      },
+      "defect_rate": {
+        "type": "float",
+        "example": "0.2193",
+        "identifier": false
+      },
+      "product_line": {
+        "type": "enum",
+        "values": [
+          "Sensor",
+          "HMI",
+          "Drive",
+          "Relay",
+          "PLC"
+        ],
+        "example": "PLC",
+        "identifier": false
+      },
+      "shift": {
+        "type": "enum",
+        "values": [
+          "Afternoon",
+          "Night",
+          "Morning"
+        ],
+        "example": "Night",
+        "identifier": false
+      },
+      "batch_status": {
+        "type": "enum",
+        "values": [
+          "Failed",
+          "Passed",
+          "Under Review"
+        ],
+        "example": "Failed",
+        "identifier": false
+      }
+    },
+    "quality.defect_reports": {
+      "defect_id": {
+        "type": "string",
+        "example": "DEF-0100000",
+        "identifier": true
+      },
+      "batch_id": {
+        "type": "string",
+        "example": "BCH-0100000",
+        "identifier": true
+      },
+      "part_id": {
+        "type": "string",
+        "example": "PRT-0100000",
+        "identifier": true
+      },
+      "defect_type": {
+        "type": "enum",
+        "values": [
+          "Weld Failure",
+          "Calibration Drift",
+          "Material Defect",
+          "Surface Crack",
+          "Dimensional Error",
+          "Assembly Fault"
+        ],
+        "example": "Dimensional Error",
+        "identifier": false
+      },
+      "severity": {
+        "type": "enum",
+        "values": [
+          "Major",
+          "Minor",
+          "Critical"
+        ],
+        "example": "Minor",
+        "identifier": false
+      },
+      "detected_at": {
+        "type": "datetime",
+        "example": "2024-02-17 05:23:30",
+        "identifier": false
+      },
+      "detection_method": {
+        "type": "enum",
+        "values": [
+          "CMM",
+          "X-Ray",
+          "Visual Inspection",
+          "Ultrasonic",
+          "Automated Vision"
+        ],
+        "example": "CMM",
+        "identifier": false
+      },
+      "rework_required": {
+        "type": "enum",
+        "values": [
+          "True",
+          "False"
+        ],
+        "example": "False",
+        "identifier": false
+      },
+      "scrap_cost_usd": {
+        "type": "float",
+        "example": "51.07",
+        "identifier": false
+      },
+      "root_cause": {
+        "type": "enum",
+        "values": [
+          "Environmental",
+          "Process Drift",
+          "Operator Error",
+          "Supplier Material",
+          "Machine Wear"
+        ],
+        "example": "Machine Wear",
+        "identifier": false
+      }
+    }
+  }
+}
