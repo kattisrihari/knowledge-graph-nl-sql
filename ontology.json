@@ -1,0 +1,797 @@
+{
+  "metadata": {
+    "version": "2.0",
+    "method": "LLM-inferred from column stats (null_density, distinct_ratio, value_distributions, sample_values)",
+    "model": "claude-haiku-4-5",
+    "domains": [
+      "domain1 - Operational & Power Grid",
+      "domain2 - Energy Service Campaigns"
+    ]
+  },
+  "nodes": [
+    {
+      "id": "domain1.ASSET_VW",
+      "label": "PowerAsset",
+      "table": "ASSET_VW",
+      "schema": "domain1",
+      "description": "A power generation or transmission equipment asset deployed across industrial energy plants with operational tracking and maintenance history.",
+      "column_semantics": {
+        "ASSET_ID": {
+          "semantic_name": "Asset Identifier",
+          "business_meaning": "Unique identifier for each power asset in the energy system"
+        },
+        "PLANT_LOCATION_ID": {
+          "semantic_name": "Facility Location Reference",
+          "business_meaning": "Plant or substation where the asset is physically installed"
+        },
+        "SERIAL_NUMBER": {
+          "semantic_name": "Manufacturer Serial Number",
+          "business_meaning": "Unique factory-assigned serial number for equipment tracking and warranty management"
+        },
+        "EQUIPMENT_CLASS": {
+          "semantic_name": "Asset Type Category",
+          "business_meaning": "Equipment classification (e.g., Gas Turbine, Wind Generator, Transformer) for asset management and operational grouping"
+        },
+        "MODEL": {
+          "semantic_name": "Equipment Model Designation",
+          "business_meaning": "Specific manufacturer model number used for procurement, spare parts, and technical specification reference"
+        },
+        "COMMISSIONING_DATE": {
+          "semantic_name": "Asset Deployment Date",
+          "business_meaning": "Date when the asset was first put into operational service"
+        },
+        "OPERATIONAL_STATUS": {
+          "semantic_name": "Current Operating State",
+          "business_meaning": "Real-time status of the asset (Running, Under Maintenance, Tripped) for fleet health monitoring"
+        },
+        "REGION": {
+          "semantic_name": "Geographic Service Region",
+          "business_meaning": "Geographic region (EMEA, Americas, APAC) where the asset operates for regional management and regulatory compliance"
+        },
+        "RATED_CAPACITY_MW": {
+          "semantic_name": "Nameplate Power Rating",
+          "business_meaning": "Maximum power generation or transmission capacity of the asset in megawatts"
+        },
+        "LAST_INSPECTION_DATE": {
+          "semantic_name": "Most Recent Maintenance Inspection Timestamp",
+          "business_meaning": "Date of the last preventive maintenance or condition assessment for asset health tracking"
+        }
+      }
+    },
+    {
+      "id": "domain1.OUTAGE__C_VW",
+      "label": "GridOutage",
+      "table": "OUTAGE__C_VW",
+      "schema": "domain1",
+      "description": "Records of power generation or distribution asset outages including the triggering cause, severity level, duration, and energy loss impact.",
+      "column_semantics": {
+        "OUTAGE_ID": {
+          "semantic_name": "Outage Identifier",
+          "business_meaning": "Unique identifier for each outage event in the energy system"
+        },
+        "ASSET_ID": {
+          "semantic_name": "Power Asset Identifier",
+          "business_meaning": "Identifier of the grid-connected asset (generator, transformer, transmission line) that experienced the outage"
+        },
+        "TRIP_REASON": {
+          "semantic_name": "Outage Trigger Cause",
+          "business_meaning": "Root cause of the asset trip or outage (e.g., thermal overload, frequency deviation, mechanical fault)"
+        },
+        "SEVERITY": {
+          "semantic_name": "Outage Impact Level",
+          "business_meaning": "Operational severity classification ranging from degraded performance to full plant offline status"
+        },
+        "START_TIME": {
+          "semantic_name": "Outage Initiation Timestamp",
+          "business_meaning": "Date and time when the outage event was triggered or first detected"
+        },
+        "RESTORED_TIME": {
+          "semantic_name": "Service Restoration Timestamp",
+          "business_meaning": "Date and time when the asset was restored to normal operation; null indicates ongoing outage"
+        },
+        "DOWNTIME_HRS": {
+          "semantic_name": "Outage Duration Hours",
+          "business_meaning": "Total duration of the outage event measured in hours"
+        },
+        "LOSS_MWH": {
+          "semantic_name": "Energy Generation Loss",
+          "business_meaning": "Megawatt-hours of energy production lost during the outage period; null when loss is unquantifiable"
+        },
+        "REPORTED_BY": {
+          "semantic_name": "Reporting Engineer",
+          "business_meaning": "Identifier of the operations or maintenance engineer who logged or reported the outage event"
+        }
+      }
+    },
+    {
+      "id": "domain1.CASE_VW",
+      "label": "ServiceCase",
+      "table": "CASE_VW",
+      "schema": "domain1",
+      "description": "Service cases tracking industrial asset maintenance issues, outages, and repairs with priority, assignment, and cost information.",
+      "column_semantics": {
+        "CASE_ID": {
+          "semantic_name": "Case Identifier",
+          "business_meaning": "Unique identifier for a service case in the maintenance system"
+        },
+        "ASSET_ID": {
+          "semantic_name": "Asset Identifier",
+          "business_meaning": "Reference to the industrial asset (e.g., wind turbine, power equipment) affected by the service case"
+        },
+        "OUTAGE_ID": {
+          "semantic_name": "Outage Identifier",
+          "business_meaning": "Reference to an associated grid or facility outage event; optional as only ~40% of cases are outage-related"
+        },
+        "ISSUE_CATEGORY": {
+          "semantic_name": "Problem Category",
+          "business_meaning": "Classification of the issue type such as mechanical inspection, control system faults, or fluid leakage"
+        },
+        "PRIORITY": {
+          "semantic_name": "Service Priority Level",
+          "business_meaning": "Urgency classification of the service case ranging from low (P4) to standard (P3) to urgent (P2)"
+        },
+        "STATUS": {
+          "semantic_name": "Case Status",
+          "business_meaning": "Current state of the service case including In Progress, Resolved, or Closed"
+        },
+        "CREATED_AT": {
+          "semantic_name": "Case Creation Timestamp",
+          "business_meaning": "Date and time when the service case was initially reported or created"
+        },
+        "ASSIGNED_TO": {
+          "semantic_name": "Assigned Engineer Identifier",
+          "business_meaning": "Reference to the engineer or technician responsible for resolving the service case"
+        },
+        "RESOLUTION_NOTES": {
+          "semantic_name": "Resolution Documentation",
+          "business_meaning": "Free-text field containing notes, findings, and actions taken to resolve the service issue"
+        },
+        "ESTIMATED_COST_EUR": {
+          "semantic_name": "Estimated Repair Cost",
+          "business_meaning": "Projected cost in EUR for repairs, parts, and labor required to resolve the service case"
+        }
+      }
+    },
+    {
+      "id": "domain1.SERVICE_WINDOW_C_VW_TEST",
+      "label": "ServiceWindow",
+      "table": "SERVICE_WINDOW_C_VW_TEST",
+      "schema": "domain1",
+      "description": "Planned maintenance or operational service windows for industrial assets with approval and scheduling details.",
+      "column_semantics": {
+        "WINDOW_ID": {
+          "semantic_name": "Service Window Identifier",
+          "business_meaning": "Unique identifier for each scheduled service window event"
+        },
+        "ASSET_ID": {
+          "semantic_name": "Asset Reference",
+          "business_meaning": "Identifier of the industrial asset (equipment, generator, turbine) subject to the service window"
+        },
+        "WINDOW_TYPE": {
+          "semantic_name": "Service Activity Type",
+          "business_meaning": "Classification of the maintenance or operational activity (e.g., inspection, overhaul, grid balancing)"
+        },
+        "APPROVED_START": {
+          "semantic_name": "Window Start Date",
+          "business_meaning": "Approved commencement date for the scheduled service window"
+        },
+        "APPROVED_END": {
+          "semantic_name": "Window End Date",
+          "business_meaning": "Approved completion date for the scheduled service window"
+        },
+        "DURATION_DAYS": {
+          "semantic_name": "Service Duration",
+          "business_meaning": "Length of the service window in calendar days"
+        },
+        "SAFETY_SIGN_OFF_BY": {
+          "semantic_name": "Safety Inspector Identifier",
+          "business_meaning": "Inspector or safety personnel who approved and signed off on the service window"
+        },
+        "APPROVAL_STATUS": {
+          "semantic_name": "Window Approval State",
+          "business_meaning": "Current authorization status of the service window (Approved, Pending, Rejected)"
+        },
+        "REGION": {
+          "semantic_name": "Geographic Region",
+          "business_meaning": "Geographic location or operational region where the asset and service window are situated"
+        }
+      }
+    },
+    {
+      "id": "domain2.USER_VW",
+      "label": "EnergySystemUser",
+      "table": "USER_VW",
+      "schema": "domain2",
+      "description": "Represents personnel in the industrial energy organization with their professional credentials, specialization, geographic assignment, and contact information.",
+      "column_semantics": {
+        "USER_ID": {
+          "semantic_name": "User Identifier",
+          "business_meaning": "Unique system identifier for each energy organization personnel member"
+        },
+        "FULL_NAME": {
+          "semantic_name": "Personnel Name",
+          "business_meaning": "Full name of the energy system professional or technician"
+        },
+        "EMAIL": {
+          "semantic_name": "Corporate Email Address",
+          "business_meaning": "Organizational email contact for the energy system personnel"
+        },
+        "SPECIALIZATION": {
+          "semantic_name": "Technical Specialization",
+          "business_meaning": "Primary technical expertise domain such as grid automation, turbine dynamics, or blade engineering"
+        },
+        "REGION": {
+          "semantic_name": "Geographic Region",
+          "business_meaning": "Operational region assignment (EMEA, APAC, Americas) for the personnel"
+        },
+        "ROLE": {
+          "semantic_name": "Job Role",
+          "business_meaning": "Functional position such as Field Technician, Lead Engineer, or Commissioning Specialist"
+        },
+        "YEARS_EXPERIENCE": {
+          "semantic_name": "Professional Experience",
+          "business_meaning": "Years of experience in industrial energy systems or related technical domain"
+        },
+        "PHONE": {
+          "semantic_name": "Contact Phone Number",
+          "business_meaning": "Business phone number for personnel communication and operational coordination"
+        }
+      }
+    },
+    {
+      "id": "domain2.PRODUCT2_VW",
+      "label": "Product",
+      "table": "PRODUCT2_VW",
+      "schema": "domain2",
+      "description": "A catalog of industrial energy equipment, spare parts, software, and service contracts with pricing, availability, and compatibility information.",
+      "column_semantics": {
+        "PRODUCT_ID": {
+          "semantic_name": "Product Identifier",
+          "business_meaning": "Unique system-generated identifier for each product in the catalog"
+        },
+        "PART_NUMBER": {
+          "semantic_name": "Manufacturer Part Number",
+          "business_meaning": "Standardized part number assigned by the manufacturer for procurement and inventory tracking"
+        },
+        "NAME": {
+          "semantic_name": "Product Name",
+          "business_meaning": "Human-readable product description including category and variant designation"
+        },
+        "PRODUCT_FAMILY": {
+          "semantic_name": "Product Category",
+          "business_meaning": "Classification of product type: Hardware Spare (physical components), Software/Digital (firmware and patches), or Service Contract (support offerings)"
+        },
+        "UNIT_COST_EUR": {
+          "semantic_name": "Unit Cost",
+          "business_meaning": "Purchase price per unit in Euros for procurement and cost accounting"
+        },
+        "LEAD_TIME_DAYS": {
+          "semantic_name": "Lead Time",
+          "business_meaning": "Number of days required between order placement and product delivery"
+        },
+        "STOCK_AVAILABLE": {
+          "semantic_name": "Available Inventory Quantity",
+          "business_meaning": "Current quantity of product units in stock and available for immediate fulfillment"
+        },
+        "COMPATIBILITY": {
+          "semantic_name": "Equipment Compatibility",
+          "business_meaning": "The energy generation or industrial equipment types (turbines, generators) with which this product is compatible"
+        }
+      }
+    },
+    {
+      "id": "domain2.CAMPAIGN_VW",
+      "label": "EnergyCampaign",
+      "table": "CAMPAIGN_VW",
+      "schema": "domain2",
+      "description": "Tracks strategic initiatives and projects aimed at improving energy infrastructure, efficiency, compliance, or operational performance across regional operating areas.",
+      "column_semantics": {
+        "CAMPAIGN_ID": {
+          "semantic_name": "Campaign Identifier",
+          "business_meaning": "Unique identifier for the energy infrastructure or operational improvement campaign"
+        },
+        "CAMPAIGN_NAME": {
+          "semantic_name": "Campaign Title",
+          "business_meaning": "Descriptive name of the strategic initiative or project (e.g., upgrades, efficiency drives, compliance programs)"
+        },
+        "OWNER_ID": {
+          "semantic_name": "Campaign Owner",
+          "business_meaning": "Identifier of the person or team responsible for executing and managing the campaign"
+        },
+        "OBJECTIVE": {
+          "semantic_name": "Primary Business Objective",
+          "business_meaning": "High-level goal of the campaign such as cost reduction, regulatory compliance, safety compliance, or life extension of assets"
+        },
+        "BUDGET_EUR": {
+          "semantic_name": "Budget Allocation",
+          "business_meaning": "Approved financial budget in EUR allocated to execute the campaign"
+        },
+        "STATUS": {
+          "semantic_name": "Campaign Lifecycle Status",
+          "business_meaning": "Current state of the campaign (Planning, Active, or Completed)"
+        },
+        "START_DATE": {
+          "semantic_name": "Campaign Launch Date",
+          "business_meaning": "Scheduled or actual date when the campaign initiatives commence"
+        },
+        "END_DATE": {
+          "semantic_name": "Campaign Target Completion Date",
+          "business_meaning": "Planned or actual date when the campaign is expected to conclude or has concluded"
+        },
+        "REGION": {
+          "semantic_name": "Geographic Coverage Area",
+          "business_meaning": "Regional scope of the campaign (APAC, Americas, EMEA, or Global)"
+        },
+        "APPROVED_BY": {
+          "semantic_name": "Approval Authority",
+          "business_meaning": "Identifier of the director or senior stakeholder who authorized the campaign budget and scope"
+        }
+      }
+    },
+    {
+      "id": "domain2.EVENT_VW",
+      "label": "MaintenanceEvent",
+      "table": "EVENT_VW",
+      "schema": "domain2",
+      "description": "Tracks scheduled and executed maintenance, deployment, and audit events across industrial products and campaigns with cost and engineer assignment tracking.",
+      "column_semantics": {
+        "EVENT_ID": {
+          "semantic_name": "Event Identifier",
+          "business_meaning": "Unique identifier for each maintenance or operational event"
+        },
+        "CAMPAIGN_ID": {
+          "semantic_name": "Campaign Reference",
+          "business_meaning": "Links event to a broader maintenance or operational campaign program"
+        },
+        "PRODUCT_ID": {
+          "semantic_name": "Product Reference",
+          "business_meaning": "Identifies the industrial asset or equipment subject to the event"
+        },
+        "EVENT_TYPE": {
+          "semantic_name": "Event Classification",
+          "business_meaning": "Categorizes the event as Parts Delivery, Software Deployment, Training Session, or Site Audit"
+        },
+        "PLANNED_DATE": {
+          "semantic_name": "Scheduled Date",
+          "business_meaning": "Originally planned or scheduled date for event execution"
+        },
+        "EXECUTION_STATUS": {
+          "semantic_name": "Event Status",
+          "business_meaning": "Current state of event execution: Scheduled, Completed, or Delayed"
+        },
+        "ASSIGNED_ENGINEER": {
+          "semantic_name": "Responsible Engineer",
+          "business_meaning": "Identifier of the engineer or technician assigned to execute the event"
+        },
+        "ACTUAL_DATE": {
+          "semantic_name": "Completion Date",
+          "business_meaning": "Actual date when the event was executed or completed"
+        },
+        "COST_EUR": {
+          "semantic_name": "Event Cost",
+          "business_meaning": "Incurred or estimated cost in Euros for the maintenance or operational event"
+        },
+        "NOTES": {
+          "semantic_name": "Event Notes",
+          "business_meaning": "Free-text comments or observations regarding event execution and outcomes"
+        }
+      }
+    }
+  ],
+  "edges": [
+    {
+      "from_table": "domain1.OUTAGE__C_VW",
+      "to_table": "domain1.ASSET_VW",
+      "from_col": "ASSET_ID",
+      "to_col": "ASSET_ID",
+      "from_label": "GridOutage",
+      "to_label": "PowerAsset",
+      "relationship": "AFFECTS",
+      "description": "An outage event impacts or disrupts the operational status and performance of a physical energy asset.",
+      "cardinality": "many_to_one",
+      "cross_db": false,
+      "confidence": "high"
+    },
+    {
+      "from_table": "domain1.CASE_VW",
+      "to_table": "domain1.ASSET_VW",
+      "from_col": "ASSET_ID",
+      "to_col": "ASSET_ID",
+      "from_label": "ServiceCase",
+      "to_label": "PowerAsset",
+      "relationship": "REPORTS",
+      "description": "Each maintenance case reports an issue or inspection finding against a specific energy asset, documenting problems, priorities, and resolutions for that asset.",
+      "cardinality": "many_to_one",
+      "cross_db": false,
+      "confidence": "high"
+    },
+    {
+      "from_table": "domain1.SERVICE_WINDOW_C_VW_TEST",
+      "to_table": "domain1.ASSET_VW",
+      "from_col": "ASSET_ID",
+      "to_col": "ASSET_ID",
+      "from_label": "ServiceWindow",
+      "to_label": "PowerAsset",
+      "relationship": "REQUIRES_MAINTENANCE_ON",
+      "description": "A service window defines a scheduled maintenance, inspection, or operational intervention period for a specific asset in the energy infrastructure.",
+      "cardinality": "many_to_one",
+      "cross_db": false,
+      "confidence": "high"
+    },
+    {
+      "from_table": "domain1.CASE_VW",
+      "to_table": "domain1.OUTAGE__C_VW",
+      "from_col": "OUTAGE_ID",
+      "to_col": "OUTAGE_ID",
+      "from_label": "ServiceCase",
+      "to_label": "GridOutage",
+      "relationship": "DOCUMENTS",
+      "description": "A maintenance case documents the details and resolution status of an energy system outage event.",
+      "cardinality": "many_to_one",
+      "cross_db": false,
+      "confidence": "high"
+    },
+    {
+      "from_table": "domain2.CAMPAIGN_VW",
+      "to_table": "domain2.USER_VW",
+      "from_col": "OWNER_ID",
+      "to_col": "USER_ID",
+      "from_label": "EnergyCampaign",
+      "to_label": "EnergySystemUser",
+      "relationship": "OWNS",
+      "description": "Each campaign is owned by a specific user who bears responsibility for its execution, budget management, and outcomes in the energy infrastructure project.",
+      "cardinality": "many_to_one",
+      "cross_db": false,
+      "confidence": "high"
+    },
+    {
+      "from_table": "domain2.EVENT_VW",
+      "to_table": "domain2.PRODUCT2_VW",
+      "from_col": "PRODUCT_ID",
+      "to_col": "PRODUCT_ID",
+      "from_label": "MaintenanceEvent",
+      "to_label": "Product",
+      "relationship": "INVOLVES",
+      "description": "Each energy system event involves a specific product (hardware spare, software, or service contract) that is the subject of the maintenance, deployment, or audit activity.",
+      "cardinality": "many_to_one",
+      "cross_db": false,
+      "confidence": "high"
+    },
+    {
+      "from_table": "domain2.EVENT_VW",
+      "to_table": "domain2.CAMPAIGN_VW",
+      "from_col": "CAMPAIGN_ID",
+      "to_col": "CAMPAIGN_ID",
+      "from_label": "MaintenanceEvent",
+      "to_label": "EnergyCampaign",
+      "relationship": "BELONGS_TO",
+      "description": "Multiple energy system events are organized and executed within the scope of a single campaign initiative.",
+      "cardinality": "many_to_one",
+      "cross_db": false,
+      "confidence": "high"
+    }
+  ],
+  "slot_context": {
+    "domain1.ASSET_VW": {
+      "ASSET_ID": {
+        "type": "identifier"
+      },
+      "PLANT_LOCATION_ID": {
+        "type": "text"
+      },
+      "SERIAL_NUMBER": {
+        "type": "identifier"
+      },
+      "EQUIPMENT_CLASS": {
+        "type": "enum",
+        "values": [
+          "Gas Turbine",
+          "Wind Generator",
+          "Transformer",
+          "Steam Turbine",
+          "Solar Inverter"
+        ]
+      },
+      "MODEL": {
+        "type": "enum",
+        "values": [
+          "SWT-DD-130",
+          "SGT-800",
+          "SGT-A65",
+          "SWT-4.0-130",
+          "400kV Power Transformer"
+        ]
+      },
+      "COMMISSIONING_DATE": {
+        "type": "free_text"
+      },
+      "OPERATIONAL_STATUS": {
+        "type": "enum",
+        "values": [
+          "Running",
+          "Under Maintenance",
+          "Tripped"
+        ]
+      },
+      "REGION": {
+        "type": "enum",
+        "values": [
+          "EMEA",
+          "Americas",
+          "APAC"
+        ]
+      },
+      "RATED_CAPACITY_MW": {
+        "type": "metric"
+      },
+      "LAST_INSPECTION_DATE": {
+        "type": "datetime"
+      }
+    },
+    "domain1.OUTAGE__C_VW": {
+      "OUTAGE_ID": {
+        "type": "identifier"
+      },
+      "ASSET_ID": {
+        "type": "text"
+      },
+      "TRIP_REASON": {
+        "type": "text"
+      },
+      "SEVERITY": {
+        "type": "enum",
+        "values": [
+          "Degraded Output",
+          "Resolved",
+          "Critical - Plant Offline"
+        ]
+      },
+      "START_TIME": {
+        "type": "free_text"
+      },
+      "RESTORED_TIME": {
+        "type": "datetime"
+      },
+      "DOWNTIME_HRS": {
+        "type": "datetime"
+      },
+      "LOSS_MWH": {
+        "type": "metric"
+      },
+      "REPORTED_BY": {
+        "type": "text"
+      }
+    },
+    "domain1.CASE_VW": {
+      "CASE_ID": {
+        "type": "identifier"
+      },
+      "ASSET_ID": {
+        "type": "text"
+      },
+      "OUTAGE_ID": {
+        "type": "text"
+      },
+      "ISSUE_CATEGORY": {
+        "type": "enum",
+        "values": [
+          "Blade Inspection",
+          "Control System Fault",
+          "Oil Leakage",
+          "Vibration Analysis",
+          "Electrical Fault"
+        ]
+      },
+      "PRIORITY": {
+        "type": "enum",
+        "values": [
+          "P3 - Standard",
+          "P2 - Urgent",
+          "P4 - Low",
+          "P1 - Emergency"
+        ]
+      },
+      "STATUS": {
+        "type": "enum",
+        "values": [
+          "Resolved",
+          "In Progress",
+          "Closed",
+          "Open",
+          "Escalated"
+        ]
+      },
+      "CREATED_AT": {
+        "type": "free_text"
+      },
+      "ASSIGNED_TO": {
+        "type": "text"
+      },
+      "RESOLUTION_NOTES": {
+        "type": "text"
+      },
+      "ESTIMATED_COST_EUR": {
+        "type": "metric"
+      }
+    },
+    "domain1.SERVICE_WINDOW_C_VW_TEST": {
+      "WINDOW_ID": {
+        "type": "identifier"
+      },
+      "ASSET_ID": {
+        "type": "text"
+      },
+      "WINDOW_TYPE": {
+        "type": "enum",
+        "values": [
+          "Borescope Inspection",
+          "Major Overhaul",
+          "Grid Balancing",
+          "Firmware Upgrade",
+          "Predictive Maintenance"
+        ]
+      },
+      "APPROVED_START": {
+        "type": "free_text"
+      },
+      "APPROVED_END": {
+        "type": "free_text"
+      },
+      "DURATION_DAYS": {
+        "type": "metric"
+      },
+      "SAFETY_SIGN_OFF_BY": {
+        "type": "text"
+      },
+      "APPROVAL_STATUS": {
+        "type": "enum",
+        "values": [
+          "Approved",
+          "Pending",
+          "Rejected"
+        ]
+      },
+      "REGION": {
+        "type": "enum",
+        "values": [
+          "EMEA",
+          "APAC",
+          "Americas"
+        ]
+      }
+    },
+    "domain2.USER_VW": {
+      "USER_ID": {
+        "type": "identifier"
+      },
+      "FULL_NAME": {
+        "type": "free_text"
+      },
+      "EMAIL": {
+        "type": "free_text"
+      },
+      "SPECIALIZATION": {
+        "type": "text"
+      },
+      "REGION": {
+        "type": "text"
+      },
+      "ROLE": {
+        "type": "text"
+      },
+      "YEARS_EXPERIENCE": {
+        "type": "text"
+      },
+      "PHONE": {
+        "type": "text"
+      }
+    },
+    "domain2.PRODUCT2_VW": {
+      "PRODUCT_ID": {
+        "type": "identifier"
+      },
+      "PART_NUMBER": {
+        "type": "identifier"
+      },
+      "NAME": {
+        "type": "free_text"
+      },
+      "PRODUCT_FAMILY": {
+        "type": "enum",
+        "values": [
+          "Hardware Spare",
+          "Software/Digital",
+          "Service Contract"
+        ]
+      },
+      "UNIT_COST_EUR": {
+        "type": "free_text"
+      },
+      "LEAD_TIME_DAYS": {
+        "type": "datetime"
+      },
+      "STOCK_AVAILABLE": {
+        "type": "text"
+      },
+      "COMPATIBILITY": {
+        "type": "text"
+      }
+    },
+    "domain2.CAMPAIGN_VW": {
+      "CAMPAIGN_ID": {
+        "type": "identifier"
+      },
+      "CAMPAIGN_NAME": {
+        "type": "free_text"
+      },
+      "OWNER_ID": {
+        "type": "text"
+      },
+      "OBJECTIVE": {
+        "type": "text"
+      },
+      "BUDGET_EUR": {
+        "type": "free_text"
+      },
+      "STATUS": {
+        "type": "text"
+      },
+      "START_DATE": {
+        "type": "free_text"
+      },
+      "END_DATE": {
+        "type": "free_text"
+      },
+      "REGION": {
+        "type": "text"
+      },
+      "APPROVED_BY": {
+        "type": "text"
+      }
+    },
+    "domain2.EVENT_VW": {
+      "EVENT_ID": {
+        "type": "identifier"
+      },
+      "CAMPAIGN_ID": {
+        "type": "text"
+      },
+      "PRODUCT_ID": {
+        "type": "text"
+      },
+      "EVENT_TYPE": {
+        "type": "enum",
+        "values": [
+          "Parts Delivery",
+          "Software Deployment",
+          "Site Audit",
+          "Engineering Milestone",
+          "Training Session"
+        ]
+      },
+      "PLANNED_DATE": {
+        "type": "datetime"
+      },
+      "EXECUTION_STATUS": {
+        "type": "enum",
+        "values": [
+          "Completed",
+          "Scheduled",
+          "Delayed"
+        ]
+      },
+      "ASSIGNED_ENGINEER": {
+        "type": "text"
+      },
+      "ACTUAL_DATE": {
+        "type": "datetime"
+      },
+      "COST_EUR": {
+        "type": "metric"
+      },
+      "NOTES": {
+        "type": "text"
+      }
+    }
+  }
+}

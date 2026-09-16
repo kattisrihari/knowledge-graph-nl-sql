@@ -1,0 +1,3222 @@
+{
+  "domain1.ASSET_VW": {
+    "table": "ASSET_VW",
+    "schema": "domain1",
+    "table_key": "domain1.ASSET_VW",
+    "total_rows": 500,
+    "columns": {
+      "ASSET_ID": {
+        "column": "ASSET_ID",
+        "total_rows": 500,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 500,
+        "distinct_ratio": 1.0,
+        "semantic_type": "identifier",
+        "top_values": [
+          {
+            "value": "AST-00500",
+            "count": 1,
+            "pct": 0.2
+          },
+          {
+            "value": "AST-00499",
+            "count": 1,
+            "pct": 0.2
+          },
+          {
+            "value": "AST-00498",
+            "count": 1,
+            "pct": 0.2
+          },
+          {
+            "value": "AST-00497",
+            "count": 1,
+            "pct": 0.2
+          },
+          {
+            "value": "AST-00496",
+            "count": 1,
+            "pct": 0.2
+          }
+        ],
+        "sample_values": [
+          "AST-00085",
+          "AST-00319",
+          "AST-00095",
+          "AST-00310",
+          "AST-00329"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "PLANT_LOCATION_ID": {
+        "column": "PLANT_LOCATION_ID",
+        "total_rows": 500,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 40,
+        "distinct_ratio": 0.08,
+        "semantic_type": "text",
+        "top_values": [
+          {
+            "value": "PLT-034",
+            "count": 22,
+            "pct": 4.4
+          },
+          {
+            "value": "PLT-029",
+            "count": 22,
+            "pct": 4.4
+          },
+          {
+            "value": "PLT-017",
+            "count": 19,
+            "pct": 3.8
+          },
+          {
+            "value": "PLT-032",
+            "count": 18,
+            "pct": 3.6
+          },
+          {
+            "value": "PLT-040",
+            "count": 15,
+            "pct": 3.0
+          }
+        ],
+        "sample_values": [
+          "PLT-012",
+          "PLT-009",
+          "PLT-029",
+          "PLT-025",
+          "PLT-026"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "SERIAL_NUMBER": {
+        "column": "SERIAL_NUMBER",
+        "total_rows": 500,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 500,
+        "distinct_ratio": 1.0,
+        "semantic_type": "identifier",
+        "top_values": [
+          {
+            "value": "SN-ZZ844RZT73",
+            "count": 1,
+            "pct": 0.2
+          },
+          {
+            "value": "SN-ZY831IHA71",
+            "count": 1,
+            "pct": 0.2
+          },
+          {
+            "value": "SN-ZY738EMX34",
+            "count": 1,
+            "pct": 0.2
+          },
+          {
+            "value": "SN-ZX991YVJ21",
+            "count": 1,
+            "pct": 0.2
+          },
+          {
+            "value": "SN-ZW419XZJ86",
+            "count": 1,
+            "pct": 0.2
+          }
+        ],
+        "sample_values": [
+          "SN-EY122YMD69",
+          "SN-NG991QIW18",
+          "SN-VW562DGB18",
+          "SN-KQ550ZEJ22",
+          "SN-IP228DHC72"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "EQUIPMENT_CLASS": {
+        "column": "EQUIPMENT_CLASS",
+        "total_rows": 500,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 6,
+        "distinct_ratio": 0.012,
+        "semantic_type": "enum",
+        "top_values": [
+          {
+            "value": "Gas Turbine",
+            "count": 154,
+            "pct": 30.8
+          },
+          {
+            "value": "Wind Generator",
+            "count": 118,
+            "pct": 23.6
+          },
+          {
+            "value": "Transformer",
+            "count": 97,
+            "pct": 19.4
+          },
+          {
+            "value": "Steam Turbine",
+            "count": 58,
+            "pct": 11.6
+          },
+          {
+            "value": "Solar Inverter",
+            "count": 43,
+            "pct": 8.6
+          }
+        ],
+        "sample_values": [
+          "Wind Generator",
+          "Steam Turbine",
+          "Steam Turbine",
+          "Wind Generator",
+          "Steam Turbine"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "MODEL": {
+        "column": "MODEL",
+        "total_rows": 500,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 18,
+        "distinct_ratio": 0.036,
+        "semantic_type": "enum",
+        "top_values": [
+          {
+            "value": "SWT-DD-130",
+            "count": 44,
+            "pct": 8.8
+          },
+          {
+            "value": "SGT-800",
+            "count": 42,
+            "pct": 8.4
+          },
+          {
+            "value": "SGT-A65",
+            "count": 41,
+            "pct": 8.2
+          },
+          {
+            "value": "SWT-4.0-130",
+            "count": 40,
+            "pct": 8.0
+          },
+          {
+            "value": "400kV Power Transformer",
+            "count": 40,
+            "pct": 8.0
+          }
+        ],
+        "sample_values": [
+          "SWT-3.3-130",
+          "400kV Power Transformer",
+          "SGT-A65",
+          "220kV Auto-Transformer",
+          "SGT-600"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "COMMISSIONING_DATE": {
+        "column": "COMMISSIONING_DATE",
+        "total_rows": 500,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 480,
+        "distinct_ratio": 0.96,
+        "semantic_type": "free_text",
+        "top_values": [
+          {
+            "value": "2010-08-19",
+            "count": 3,
+            "pct": 0.6
+          },
+          {
+            "value": "2010-04-24",
+            "count": 3,
+            "pct": 0.6
+          },
+          {
+            "value": "2023-06-21",
+            "count": 2,
+            "pct": 0.4
+          },
+          {
+            "value": "2022-08-27",
+            "count": 2,
+            "pct": 0.4
+          },
+          {
+            "value": "2022-07-14",
+            "count": 2,
+            "pct": 0.4
+          }
+        ],
+        "sample_values": [
+          "2020-12-08",
+          "2022-09-20",
+          "2020-07-18",
+          "2018-02-17",
+          "2022-07-14"
+        ],
+        "sqlite_type": "DATE"
+      },
+      "OPERATIONAL_STATUS": {
+        "column": "OPERATIONAL_STATUS",
+        "total_rows": 500,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 3,
+        "distinct_ratio": 0.006,
+        "semantic_type": "enum",
+        "top_values": [
+          {
+            "value": "Running",
+            "count": 367,
+            "pct": 73.4
+          },
+          {
+            "value": "Under Maintenance",
+            "count": 89,
+            "pct": 17.8
+          },
+          {
+            "value": "Tripped",
+            "count": 44,
+            "pct": 8.8
+          }
+        ],
+        "sample_values": [
+          "Under Maintenance",
+          "Running",
+          "Running",
+          "Running",
+          "Running"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "REGION": {
+        "column": "REGION",
+        "total_rows": 500,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 3,
+        "distinct_ratio": 0.006,
+        "semantic_type": "enum",
+        "top_values": [
+          {
+            "value": "EMEA",
+            "count": 213,
+            "pct": 42.6
+          },
+          {
+            "value": "Americas",
+            "count": 209,
+            "pct": 41.8
+          },
+          {
+            "value": "APAC",
+            "count": 78,
+            "pct": 15.6
+          }
+        ],
+        "sample_values": [
+          "EMEA",
+          "Americas",
+          "Americas",
+          "Americas",
+          "Americas"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "RATED_CAPACITY_MW": {
+        "column": "RATED_CAPACITY_MW",
+        "total_rows": 500,
+        "null_count": 34,
+        "null_density": 0.068,
+        "distinct_count": 447,
+        "distinct_ratio": 0.894,
+        "semantic_type": "metric",
+        "top_values": [
+          {
+            "value": "529.1",
+            "count": 2,
+            "pct": 0.4
+          },
+          {
+            "value": "525.8",
+            "count": 2,
+            "pct": 0.4
+          },
+          {
+            "value": "510.3",
+            "count": 2,
+            "pct": 0.4
+          },
+          {
+            "value": "496.8",
+            "count": 2,
+            "pct": 0.4
+          },
+          {
+            "value": "471.7",
+            "count": 2,
+            "pct": 0.4
+          }
+        ],
+        "sample_values": [
+          "495.5",
+          "362.9",
+          "275.4",
+          "149.7",
+          "595.5"
+        ],
+        "sqlite_type": "REAL"
+      },
+      "LAST_INSPECTION_DATE": {
+        "column": "LAST_INSPECTION_DATE",
+        "total_rows": 500,
+        "null_count": 45,
+        "null_density": 0.09,
+        "distinct_count": 406,
+        "distinct_ratio": 0.812,
+        "semantic_type": "datetime",
+        "top_values": [
+          {
+            "value": "2024-12-27",
+            "count": 2,
+            "pct": 0.4
+          },
+          {
+            "value": "2024-11-25",
+            "count": 2,
+            "pct": 0.4
+          },
+          {
+            "value": "2024-10-06",
+            "count": 2,
+            "pct": 0.4
+          },
+          {
+            "value": "2024-08-18",
+            "count": 2,
+            "pct": 0.4
+          },
+          {
+            "value": "2024-07-15",
+            "count": 2,
+            "pct": 0.4
+          }
+        ],
+        "sample_values": [
+          "2021-03-31",
+          "2023-05-01",
+          "2023-05-18",
+          "2022-10-31",
+          "2022-09-05"
+        ],
+        "sqlite_type": "DATE"
+      }
+    }
+  },
+  "domain1.OUTAGE__C_VW": {
+    "table": "OUTAGE__C_VW",
+    "schema": "domain1",
+    "table_key": "domain1.OUTAGE__C_VW",
+    "total_rows": 100,
+    "columns": {
+      "OUTAGE_ID": {
+        "column": "OUTAGE_ID",
+        "total_rows": 100,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 100,
+        "distinct_ratio": 1.0,
+        "semantic_type": "identifier",
+        "top_values": [
+          {
+            "value": "OUT-000100",
+            "count": 1,
+            "pct": 1.0
+          },
+          {
+            "value": "OUT-000099",
+            "count": 1,
+            "pct": 1.0
+          },
+          {
+            "value": "OUT-000098",
+            "count": 1,
+            "pct": 1.0
+          },
+          {
+            "value": "OUT-000097",
+            "count": 1,
+            "pct": 1.0
+          },
+          {
+            "value": "OUT-000096",
+            "count": 1,
+            "pct": 1.0
+          }
+        ],
+        "sample_values": [
+          "OUT-000069",
+          "OUT-000065",
+          "OUT-000053",
+          "OUT-000072",
+          "OUT-000035"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "ASSET_ID": {
+        "column": "ASSET_ID",
+        "total_rows": 100,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 89,
+        "distinct_ratio": 0.89,
+        "semantic_type": "text",
+        "top_values": [
+          {
+            "value": "AST-00371",
+            "count": 3,
+            "pct": 3.0
+          },
+          {
+            "value": "AST-00481",
+            "count": 2,
+            "pct": 2.0
+          },
+          {
+            "value": "AST-00450",
+            "count": 2,
+            "pct": 2.0
+          },
+          {
+            "value": "AST-00424",
+            "count": 2,
+            "pct": 2.0
+          },
+          {
+            "value": "AST-00273",
+            "count": 2,
+            "pct": 2.0
+          }
+        ],
+        "sample_values": [
+          "AST-00149",
+          "AST-00139",
+          "AST-00147",
+          "AST-00481",
+          "AST-00417"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "TRIP_REASON": {
+        "column": "TRIP_REASON",
+        "total_rows": 100,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 6,
+        "distinct_ratio": 0.06,
+        "semantic_type": "text",
+        "top_values": [
+          {
+            "value": "Thermal Overload",
+            "count": 27,
+            "pct": 27.0
+          },
+          {
+            "value": "Vibration Spike",
+            "count": 26,
+            "pct": 26.0
+          },
+          {
+            "value": "Grid Frequency Drop",
+            "count": 22,
+            "pct": 22.0
+          },
+          {
+            "value": "Protection Relay Trip",
+            "count": 15,
+            "pct": 15.0
+          },
+          {
+            "value": "Mechanical Failure",
+            "count": 6,
+            "pct": 6.0
+          }
+        ],
+        "sample_values": [
+          "Thermal Overload",
+          "Vibration Spike",
+          "Vibration Spike",
+          "Mechanical Failure",
+          "Vibration Spike"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "SEVERITY": {
+        "column": "SEVERITY",
+        "total_rows": 100,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 3,
+        "distinct_ratio": 0.03,
+        "semantic_type": "enum",
+        "top_values": [
+          {
+            "value": "Degraded Output",
+            "count": 53,
+            "pct": 53.0
+          },
+          {
+            "value": "Resolved",
+            "count": 36,
+            "pct": 36.0
+          },
+          {
+            "value": "Critical - Plant Offline",
+            "count": 11,
+            "pct": 11.0
+          }
+        ],
+        "sample_values": [
+          "Resolved",
+          "Resolved",
+          "Critical - Plant Offline",
+          "Degraded Output",
+          "Resolved"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "START_TIME": {
+        "column": "START_TIME",
+        "total_rows": 100,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 100,
+        "distinct_ratio": 1.0,
+        "semantic_type": "free_text",
+        "top_values": [
+          {
+            "value": "2024-12-30 11:34:26",
+            "count": 1,
+            "pct": 1.0
+          },
+          {
+            "value": "2024-12-24 06:07:58",
+            "count": 1,
+            "pct": 1.0
+          },
+          {
+            "value": "2024-12-09 14:13:10",
+            "count": 1,
+            "pct": 1.0
+          },
+          {
+            "value": "2024-12-08 21:11:18",
+            "count": 1,
+            "pct": 1.0
+          },
+          {
+            "value": "2024-12-04 23:06:29",
+            "count": 1,
+            "pct": 1.0
+          }
+        ],
+        "sample_values": [
+          "2024-11-20 05:26:55",
+          "2024-05-22 08:19:46",
+          "2023-07-21 21:02:32",
+          "2021-12-28 13:44:20",
+          "2023-11-22 19:33:02"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "RESTORED_TIME": {
+        "column": "RESTORED_TIME",
+        "total_rows": 100,
+        "null_count": 14,
+        "null_density": 0.14,
+        "distinct_count": 86,
+        "distinct_ratio": 0.86,
+        "semantic_type": "datetime",
+        "top_values": [
+          {
+            "value": "2024-12-30 12:57:09",
+            "count": 1,
+            "pct": 1.0
+          },
+          {
+            "value": "2024-12-24 08:11:06",
+            "count": 1,
+            "pct": 1.0
+          },
+          {
+            "value": "2024-12-09 15:06:52",
+            "count": 1,
+            "pct": 1.0
+          },
+          {
+            "value": "2024-12-08 21:41:18",
+            "count": 1,
+            "pct": 1.0
+          },
+          {
+            "value": "2024-12-05 05:56:34",
+            "count": 1,
+            "pct": 1.0
+          }
+        ],
+        "sample_values": [
+          "2021-05-27 08:06:36",
+          "2024-01-19 04:58:44",
+          "2023-11-23 08:00:59",
+          "2024-09-24 10:45:40",
+          "2021-02-02 23:55:26"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "DOWNTIME_HRS": {
+        "column": "DOWNTIME_HRS",
+        "total_rows": 100,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 90,
+        "distinct_ratio": 0.9,
+        "semantic_type": "datetime",
+        "top_values": [
+          {
+            "value": "0.5",
+            "count": 8,
+            "pct": 8.0
+          },
+          {
+            "value": "9.62",
+            "count": 2,
+            "pct": 2.0
+          },
+          {
+            "value": "1.97",
+            "count": 2,
+            "pct": 2.0
+          },
+          {
+            "value": "0.64",
+            "count": 2,
+            "pct": 2.0
+          },
+          {
+            "value": "36.4",
+            "count": 1,
+            "pct": 1.0
+          }
+        ],
+        "sample_values": [
+          "9.62",
+          "2.2",
+          "12.19",
+          "0.5",
+          "0.98"
+        ],
+        "sqlite_type": "REAL"
+      },
+      "LOSS_MWH": {
+        "column": "LOSS_MWH",
+        "total_rows": 100,
+        "null_count": 27,
+        "null_density": 0.27,
+        "distinct_count": 73,
+        "distinct_ratio": 0.73,
+        "semantic_type": "metric",
+        "top_values": [
+          {
+            "value": "4973.5",
+            "count": 1,
+            "pct": 1.0
+          },
+          {
+            "value": "4944.3",
+            "count": 1,
+            "pct": 1.0
+          },
+          {
+            "value": "4885.4",
+            "count": 1,
+            "pct": 1.0
+          },
+          {
+            "value": "4833.1",
+            "count": 1,
+            "pct": 1.0
+          },
+          {
+            "value": "4708.5",
+            "count": 1,
+            "pct": 1.0
+          }
+        ],
+        "sample_values": [
+          "447.4",
+          "1856.4",
+          "392.8",
+          "3268.2",
+          "3334.7"
+        ],
+        "sqlite_type": "REAL"
+      },
+      "REPORTED_BY": {
+        "column": "REPORTED_BY",
+        "total_rows": 100,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 44,
+        "distinct_ratio": 0.44,
+        "semantic_type": "text",
+        "top_values": [
+          {
+            "value": "ENG-035",
+            "count": 5,
+            "pct": 5.0
+          },
+          {
+            "value": "ENG-027",
+            "count": 5,
+            "pct": 5.0
+          },
+          {
+            "value": "ENG-025",
+            "count": 5,
+            "pct": 5.0
+          },
+          {
+            "value": "ENG-049",
+            "count": 4,
+            "pct": 4.0
+          },
+          {
+            "value": "ENG-030",
+            "count": 4,
+            "pct": 4.0
+          }
+        ],
+        "sample_values": [
+          "ENG-030",
+          "ENG-049",
+          "ENG-048",
+          "ENG-036",
+          "ENG-041"
+        ],
+        "sqlite_type": "TEXT"
+      }
+    }
+  },
+  "domain1.CASE_VW": {
+    "table": "CASE_VW",
+    "schema": "domain1",
+    "table_key": "domain1.CASE_VW",
+    "total_rows": 3000,
+    "columns": {
+      "CASE_ID": {
+        "column": "CASE_ID",
+        "total_rows": 3000,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 3000,
+        "distinct_ratio": 1.0,
+        "semantic_type": "identifier",
+        "top_values": [
+          {
+            "value": "CASE-0003000",
+            "count": 1,
+            "pct": 0.03
+          },
+          {
+            "value": "CASE-0002999",
+            "count": 1,
+            "pct": 0.03
+          },
+          {
+            "value": "CASE-0002998",
+            "count": 1,
+            "pct": 0.03
+          },
+          {
+            "value": "CASE-0002997",
+            "count": 1,
+            "pct": 0.03
+          },
+          {
+            "value": "CASE-0002996",
+            "count": 1,
+            "pct": 0.03
+          }
+        ],
+        "sample_values": [
+          "CASE-0002047",
+          "CASE-0001641",
+          "CASE-0000510",
+          "CASE-0000004",
+          "CASE-0000208"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "ASSET_ID": {
+        "column": "ASSET_ID",
+        "total_rows": 3000,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 498,
+        "distinct_ratio": 0.166,
+        "semantic_type": "text",
+        "top_values": [
+          {
+            "value": "AST-00461",
+            "count": 13,
+            "pct": 0.43
+          },
+          {
+            "value": "AST-00439",
+            "count": 13,
+            "pct": 0.43
+          },
+          {
+            "value": "AST-00216",
+            "count": 13,
+            "pct": 0.43
+          },
+          {
+            "value": "AST-00146",
+            "count": 13,
+            "pct": 0.43
+          },
+          {
+            "value": "AST-00179",
+            "count": 12,
+            "pct": 0.4
+          }
+        ],
+        "sample_values": [
+          "AST-00179",
+          "AST-00372",
+          "AST-00334",
+          "AST-00374",
+          "AST-00198"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "OUTAGE_ID": {
+        "column": "OUTAGE_ID",
+        "total_rows": 3000,
+        "null_count": 1799,
+        "null_density": 0.5997,
+        "distinct_count": 100,
+        "distinct_ratio": 0.0333,
+        "semantic_type": "text",
+        "top_values": [
+          {
+            "value": "OUT-000080",
+            "count": 21,
+            "pct": 0.7
+          },
+          {
+            "value": "OUT-000017",
+            "count": 20,
+            "pct": 0.67
+          },
+          {
+            "value": "OUT-000060",
+            "count": 19,
+            "pct": 0.63
+          },
+          {
+            "value": "OUT-000061",
+            "count": 18,
+            "pct": 0.6
+          },
+          {
+            "value": "OUT-000056",
+            "count": 18,
+            "pct": 0.6
+          }
+        ],
+        "sample_values": [
+          "OUT-000007",
+          "OUT-000025",
+          "OUT-000065",
+          "OUT-000018",
+          "OUT-000037"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "ISSUE_CATEGORY": {
+        "column": "ISSUE_CATEGORY",
+        "total_rows": 3000,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 8,
+        "distinct_ratio": 0.0027,
+        "semantic_type": "enum",
+        "top_values": [
+          {
+            "value": "Blade Inspection",
+            "count": 509,
+            "pct": 16.97
+          },
+          {
+            "value": "Control System Fault",
+            "count": 504,
+            "pct": 16.8
+          },
+          {
+            "value": "Oil Leakage",
+            "count": 424,
+            "pct": 14.13
+          },
+          {
+            "value": "Vibration Analysis",
+            "count": 411,
+            "pct": 13.7
+          },
+          {
+            "value": "Electrical Fault",
+            "count": 372,
+            "pct": 12.4
+          }
+        ],
+        "sample_values": [
+          "Vibration Analysis",
+          "Oil Leakage",
+          "Vibration Analysis",
+          "Oil Leakage",
+          "Control System Fault"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "PRIORITY": {
+        "column": "PRIORITY",
+        "total_rows": 3000,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 4,
+        "distinct_ratio": 0.0013,
+        "semantic_type": "enum",
+        "top_values": [
+          {
+            "value": "P3 - Standard",
+            "count": 1644,
+            "pct": 54.8
+          },
+          {
+            "value": "P2 - Urgent",
+            "count": 772,
+            "pct": 25.73
+          },
+          {
+            "value": "P4 - Low",
+            "count": 433,
+            "pct": 14.43
+          },
+          {
+            "value": "P1 - Emergency",
+            "count": 151,
+            "pct": 5.03
+          }
+        ],
+        "sample_values": [
+          "P3 - Standard",
+          "P3 - Standard",
+          "P3 - Standard",
+          "P3 - Standard",
+          "P2 - Urgent"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "STATUS": {
+        "column": "STATUS",
+        "total_rows": 3000,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 5,
+        "distinct_ratio": 0.0017,
+        "semantic_type": "enum",
+        "top_values": [
+          {
+            "value": "Resolved",
+            "count": 855,
+            "pct": 28.5
+          },
+          {
+            "value": "In Progress",
+            "count": 782,
+            "pct": 26.07
+          },
+          {
+            "value": "Closed",
+            "count": 766,
+            "pct": 25.53
+          },
+          {
+            "value": "Open",
+            "count": 449,
+            "pct": 14.97
+          },
+          {
+            "value": "Escalated",
+            "count": 148,
+            "pct": 4.93
+          }
+        ],
+        "sample_values": [
+          "Closed",
+          "In Progress",
+          "Resolved",
+          "Closed",
+          "Closed"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "CREATED_AT": {
+        "column": "CREATED_AT",
+        "total_rows": 3000,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 3000,
+        "distinct_ratio": 1.0,
+        "semantic_type": "free_text",
+        "top_values": [
+          {
+            "value": "2024-12-30 18:27:57",
+            "count": 1,
+            "pct": 0.03
+          },
+          {
+            "value": "2024-12-30 06:40:35",
+            "count": 1,
+            "pct": 0.03
+          },
+          {
+            "value": "2024-12-29 18:10:20",
+            "count": 1,
+            "pct": 0.03
+          },
+          {
+            "value": "2024-12-29 11:22:24",
+            "count": 1,
+            "pct": 0.03
+          },
+          {
+            "value": "2024-12-28 05:17:23",
+            "count": 1,
+            "pct": 0.03
+          }
+        ],
+        "sample_values": [
+          "2021-12-12 23:20:58",
+          "2022-08-09 15:29:24",
+          "2023-02-10 04:54:23",
+          "2024-02-19 18:03:23",
+          "2023-10-20 16:14:54"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "ASSIGNED_TO": {
+        "column": "ASSIGNED_TO",
+        "total_rows": 3000,
+        "null_count": 279,
+        "null_density": 0.093,
+        "distinct_count": 50,
+        "distinct_ratio": 0.0167,
+        "semantic_type": "text",
+        "top_values": [
+          {
+            "value": "ENG-024",
+            "count": 66,
+            "pct": 2.2
+          },
+          {
+            "value": "ENG-042",
+            "count": 64,
+            "pct": 2.13
+          },
+          {
+            "value": "ENG-029",
+            "count": 64,
+            "pct": 2.13
+          },
+          {
+            "value": "ENG-020",
+            "count": 64,
+            "pct": 2.13
+          },
+          {
+            "value": "ENG-044",
+            "count": 63,
+            "pct": 2.1
+          }
+        ],
+        "sample_values": [
+          "ENG-032",
+          "ENG-040",
+          "ENG-034",
+          "ENG-038",
+          "ENG-008"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "RESOLUTION_NOTES": {
+        "column": "RESOLUTION_NOTES",
+        "total_rows": 3000,
+        "null_count": 1036,
+        "null_density": 0.3453,
+        "distinct_count": 1964,
+        "distinct_ratio": 0.6547,
+        "semantic_type": "text",
+        "top_values": [
+          {
+            "value": "Yourself home American age others subject operation everyone despite its three rich.",
+            "count": 1,
+            "pct": 0.03
+          },
+          {
+            "value": "Your job face structure skill office bed something.",
+            "count": 1,
+            "pct": 0.03
+          },
+          {
+            "value": "Young word identify sport none at maintain today.",
+            "count": 1,
+            "pct": 0.03
+          },
+          {
+            "value": "Young current risk rather sea term.",
+            "count": 1,
+            "pct": 0.03
+          },
+          {
+            "value": "You ready way rule indicate clear media machine leader whose message.",
+            "count": 1,
+            "pct": 0.03
+          }
+        ],
+        "sample_values": [
+          "Five such through final goal develop shake eight senior record.",
+          "Across civil wife campaign begin enter good.",
+          "Development lead player claim everyone live although guess only five school improve member.",
+          "May bed hair action draw who word range serious cell city.",
+          "Only there authority door poor stay yard break."
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "ESTIMATED_COST_EUR": {
+        "column": "ESTIMATED_COST_EUR",
+        "total_rows": 3000,
+        "null_count": 747,
+        "null_density": 0.249,
+        "distinct_count": 2200,
+        "distinct_ratio": 0.7333,
+        "semantic_type": "metric",
+        "top_values": [
+          {
+            "value": "200.0",
+            "count": 53,
+            "pct": 1.77
+          },
+          {
+            "value": "3015.46",
+            "count": 2,
+            "pct": 0.07
+          },
+          {
+            "value": "80000.0",
+            "count": 1,
+            "pct": 0.03
+          },
+          {
+            "value": "62422.13",
+            "count": 1,
+            "pct": 0.03
+          },
+          {
+            "value": "60745.26",
+            "count": 1,
+            "pct": 0.03
+          }
+        ],
+        "sample_values": [
+          "6319.15",
+          "15771.54",
+          "8488.03",
+          "12284.72",
+          "13487.67"
+        ],
+        "sqlite_type": "REAL"
+      }
+    }
+  },
+  "domain1.SERVICE_WINDOW_C_VW_TEST": {
+    "table": "SERVICE_WINDOW_C_VW_TEST",
+    "schema": "domain1",
+    "table_key": "domain1.SERVICE_WINDOW_C_VW_TEST",
+    "total_rows": 200,
+    "columns": {
+      "WINDOW_ID": {
+        "column": "WINDOW_ID",
+        "total_rows": 200,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 200,
+        "distinct_ratio": 1.0,
+        "semantic_type": "identifier",
+        "top_values": [
+          {
+            "value": "WIN-00200",
+            "count": 1,
+            "pct": 0.5
+          },
+          {
+            "value": "WIN-00199",
+            "count": 1,
+            "pct": 0.5
+          },
+          {
+            "value": "WIN-00198",
+            "count": 1,
+            "pct": 0.5
+          },
+          {
+            "value": "WIN-00197",
+            "count": 1,
+            "pct": 0.5
+          },
+          {
+            "value": "WIN-00196",
+            "count": 1,
+            "pct": 0.5
+          }
+        ],
+        "sample_values": [
+          "WIN-00167",
+          "WIN-00097",
+          "WIN-00197",
+          "WIN-00116",
+          "WIN-00056"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "ASSET_ID": {
+        "column": "ASSET_ID",
+        "total_rows": 200,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 163,
+        "distinct_ratio": 0.815,
+        "semantic_type": "text",
+        "top_values": [
+          {
+            "value": "AST-00282",
+            "count": 3,
+            "pct": 1.5
+          },
+          {
+            "value": "AST-00265",
+            "count": 3,
+            "pct": 1.5
+          },
+          {
+            "value": "AST-00090",
+            "count": 3,
+            "pct": 1.5
+          },
+          {
+            "value": "AST-00499",
+            "count": 2,
+            "pct": 1.0
+          },
+          {
+            "value": "AST-00451",
+            "count": 2,
+            "pct": 1.0
+          }
+        ],
+        "sample_values": [
+          "AST-00030",
+          "AST-00065",
+          "AST-00492",
+          "AST-00269",
+          "AST-00326"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "WINDOW_TYPE": {
+        "column": "WINDOW_TYPE",
+        "total_rows": 200,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 5,
+        "distinct_ratio": 0.025,
+        "semantic_type": "enum",
+        "top_values": [
+          {
+            "value": "Borescope Inspection",
+            "count": 69,
+            "pct": 34.5
+          },
+          {
+            "value": "Major Overhaul",
+            "count": 48,
+            "pct": 24.0
+          },
+          {
+            "value": "Grid Balancing",
+            "count": 44,
+            "pct": 22.0
+          },
+          {
+            "value": "Firmware Upgrade",
+            "count": 24,
+            "pct": 12.0
+          },
+          {
+            "value": "Predictive Maintenance",
+            "count": 15,
+            "pct": 7.5
+          }
+        ],
+        "sample_values": [
+          "Borescope Inspection",
+          "Major Overhaul",
+          "Grid Balancing",
+          "Grid Balancing",
+          "Major Overhaul"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "APPROVED_START": {
+        "column": "APPROVED_START",
+        "total_rows": 200,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 188,
+        "distinct_ratio": 0.94,
+        "semantic_type": "free_text",
+        "top_values": [
+          {
+            "value": "2024-04-15",
+            "count": 3,
+            "pct": 1.5
+          },
+          {
+            "value": "2025-06-25",
+            "count": 2,
+            "pct": 1.0
+          },
+          {
+            "value": "2024-06-06",
+            "count": 2,
+            "pct": 1.0
+          },
+          {
+            "value": "2023-05-03",
+            "count": 2,
+            "pct": 1.0
+          },
+          {
+            "value": "2023-02-05",
+            "count": 2,
+            "pct": 1.0
+          }
+        ],
+        "sample_values": [
+          "2023-04-11",
+          "2025-02-26",
+          "2023-12-03",
+          "2025-01-15",
+          "2023-09-13"
+        ],
+        "sqlite_type": "DATE"
+      },
+      "APPROVED_END": {
+        "column": "APPROVED_END",
+        "total_rows": 200,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 183,
+        "distinct_ratio": 0.915,
+        "semantic_type": "free_text",
+        "top_values": [
+          {
+            "value": "2025-03-13",
+            "count": 3,
+            "pct": 1.5
+          },
+          {
+            "value": "2025-05-03",
+            "count": 2,
+            "pct": 1.0
+          },
+          {
+            "value": "2025-03-08",
+            "count": 2,
+            "pct": 1.0
+          },
+          {
+            "value": "2024-11-01",
+            "count": 2,
+            "pct": 1.0
+          },
+          {
+            "value": "2024-07-04",
+            "count": 2,
+            "pct": 1.0
+          }
+        ],
+        "sample_values": [
+          "2025-03-13",
+          "2023-08-05",
+          "2024-09-18",
+          "2022-05-10",
+          "2025-05-03"
+        ],
+        "sqlite_type": "DATE"
+      },
+      "DURATION_DAYS": {
+        "column": "DURATION_DAYS",
+        "total_rows": 200,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 20,
+        "distinct_ratio": 0.1,
+        "semantic_type": "metric",
+        "top_values": [
+          {
+            "value": "4",
+            "count": 20,
+            "pct": 10.0
+          },
+          {
+            "value": "12",
+            "count": 16,
+            "pct": 8.0
+          },
+          {
+            "value": "10",
+            "count": 15,
+            "pct": 7.5
+          },
+          {
+            "value": "14",
+            "count": 12,
+            "pct": 6.0
+          },
+          {
+            "value": "7",
+            "count": 12,
+            "pct": 6.0
+          }
+        ],
+        "sample_values": [
+          "20",
+          "5",
+          "8",
+          "8",
+          "18"
+        ],
+        "sqlite_type": "INTEGER"
+      },
+      "SAFETY_SIGN_OFF_BY": {
+        "column": "SAFETY_SIGN_OFF_BY",
+        "total_rows": 200,
+        "null_count": 39,
+        "null_density": 0.195,
+        "distinct_count": 20,
+        "distinct_ratio": 0.1,
+        "semantic_type": "text",
+        "top_values": [
+          {
+            "value": "INSP-005",
+            "count": 13,
+            "pct": 6.5
+          },
+          {
+            "value": "INSP-006",
+            "count": 12,
+            "pct": 6.0
+          },
+          {
+            "value": "INSP-015",
+            "count": 11,
+            "pct": 5.5
+          },
+          {
+            "value": "INSP-018",
+            "count": 10,
+            "pct": 5.0
+          },
+          {
+            "value": "INSP-010",
+            "count": 10,
+            "pct": 5.0
+          }
+        ],
+        "sample_values": [
+          "INSP-003",
+          "INSP-001",
+          "INSP-009",
+          "INSP-009",
+          "INSP-016"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "APPROVAL_STATUS": {
+        "column": "APPROVAL_STATUS",
+        "total_rows": 200,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 3,
+        "distinct_ratio": 0.015,
+        "semantic_type": "enum",
+        "top_values": [
+          {
+            "value": "Approved",
+            "count": 151,
+            "pct": 75.5
+          },
+          {
+            "value": "Pending",
+            "count": 43,
+            "pct": 21.5
+          },
+          {
+            "value": "Rejected",
+            "count": 6,
+            "pct": 3.0
+          }
+        ],
+        "sample_values": [
+          "Pending",
+          "Approved",
+          "Approved",
+          "Pending",
+          "Approved"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "REGION": {
+        "column": "REGION",
+        "total_rows": 200,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 3,
+        "distinct_ratio": 0.015,
+        "semantic_type": "enum",
+        "top_values": [
+          {
+            "value": "EMEA",
+            "count": 89,
+            "pct": 44.5
+          },
+          {
+            "value": "APAC",
+            "count": 61,
+            "pct": 30.5
+          },
+          {
+            "value": "Americas",
+            "count": 50,
+            "pct": 25.0
+          }
+        ],
+        "sample_values": [
+          "EMEA",
+          "EMEA",
+          "Americas",
+          "EMEA",
+          "APAC"
+        ],
+        "sqlite_type": "TEXT"
+      }
+    }
+  },
+  "domain2.USER_VW": {
+    "table": "USER_VW",
+    "schema": "domain2",
+    "table_key": "domain2.USER_VW",
+    "total_rows": 50,
+    "columns": {
+      "USER_ID": {
+        "column": "USER_ID",
+        "total_rows": 50,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 50,
+        "distinct_ratio": 1.0,
+        "semantic_type": "identifier",
+        "top_values": [
+          {
+            "value": "USR-0050",
+            "count": 1,
+            "pct": 2.0
+          },
+          {
+            "value": "USR-0049",
+            "count": 1,
+            "pct": 2.0
+          },
+          {
+            "value": "USR-0048",
+            "count": 1,
+            "pct": 2.0
+          },
+          {
+            "value": "USR-0047",
+            "count": 1,
+            "pct": 2.0
+          },
+          {
+            "value": "USR-0046",
+            "count": 1,
+            "pct": 2.0
+          }
+        ],
+        "sample_values": [
+          "USR-0020",
+          "USR-0022",
+          "USR-0039",
+          "USR-0014",
+          "USR-0049"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "FULL_NAME": {
+        "column": "FULL_NAME",
+        "total_rows": 50,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 50,
+        "distinct_ratio": 1.0,
+        "semantic_type": "free_text",
+        "top_values": [
+          {
+            "value": "Willie Wall",
+            "count": 1,
+            "pct": 2.0
+          },
+          {
+            "value": "Victoria Levy",
+            "count": 1,
+            "pct": 2.0
+          },
+          {
+            "value": "Victoria Boyer",
+            "count": 1,
+            "pct": 2.0
+          },
+          {
+            "value": "Travis Potter",
+            "count": 1,
+            "pct": 2.0
+          },
+          {
+            "value": "Todd Walsh",
+            "count": 1,
+            "pct": 2.0
+          }
+        ],
+        "sample_values": [
+          "Victoria Boyer",
+          "Linda Cortez",
+          "Michael Perry",
+          "Jessica Combs",
+          "James Miller"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "EMAIL": {
+        "column": "EMAIL",
+        "total_rows": 50,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 50,
+        "distinct_ratio": 1.0,
+        "semantic_type": "free_text",
+        "top_values": [
+          {
+            "value": "willie.wall62@siemens-energy.com",
+            "count": 1,
+            "pct": 2.0
+          },
+          {
+            "value": "victoria.levy29@siemens-energy.com",
+            "count": 1,
+            "pct": 2.0
+          },
+          {
+            "value": "victoria.boyer45@siemens-energy.com",
+            "count": 1,
+            "pct": 2.0
+          },
+          {
+            "value": "travis.potter68@siemens-energy.com",
+            "count": 1,
+            "pct": 2.0
+          },
+          {
+            "value": "todd.walsh2@siemens-energy.com",
+            "count": 1,
+            "pct": 2.0
+          }
+        ],
+        "sample_values": [
+          "lauren.peterson94@siemens-energy.com",
+          "holly.boyle88@siemens-energy.com",
+          "james.miller87@siemens-energy.com",
+          "corey.rowland89@siemens-energy.com",
+          "steven.rosales96@siemens-energy.com"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "SPECIALIZATION": {
+        "column": "SPECIALIZATION",
+        "total_rows": 50,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 6,
+        "distinct_ratio": 0.12,
+        "semantic_type": "text",
+        "top_values": [
+          {
+            "value": "Grid Automation",
+            "count": 12,
+            "pct": 24.0
+          },
+          {
+            "value": "Blade Engineering",
+            "count": 10,
+            "pct": 20.0
+          },
+          {
+            "value": "Turbine Dynamics",
+            "count": 8,
+            "pct": 16.0
+          },
+          {
+            "value": "High Voltage Systems",
+            "count": 8,
+            "pct": 16.0
+          },
+          {
+            "value": "Digital Controls",
+            "count": 7,
+            "pct": 14.0
+          }
+        ],
+        "sample_values": [
+          "Blade Engineering",
+          "Grid Automation",
+          "Blade Engineering",
+          "Grid Automation",
+          "Grid Automation"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "REGION": {
+        "column": "REGION",
+        "total_rows": 50,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 3,
+        "distinct_ratio": 0.06,
+        "semantic_type": "text",
+        "top_values": [
+          {
+            "value": "EMEA",
+            "count": 25,
+            "pct": 50.0
+          },
+          {
+            "value": "APAC",
+            "count": 13,
+            "pct": 26.0
+          },
+          {
+            "value": "Americas",
+            "count": 12,
+            "pct": 24.0
+          }
+        ],
+        "sample_values": [
+          "EMEA",
+          "Americas",
+          "Americas",
+          "Americas",
+          "EMEA"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "ROLE": {
+        "column": "ROLE",
+        "total_rows": 50,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 5,
+        "distinct_ratio": 0.1,
+        "semantic_type": "text",
+        "top_values": [
+          {
+            "value": "Field Technician",
+            "count": 16,
+            "pct": 32.0
+          },
+          {
+            "value": "Lead Engineer",
+            "count": 15,
+            "pct": 30.0
+          },
+          {
+            "value": "Commissioning Specialist",
+            "count": 10,
+            "pct": 20.0
+          },
+          {
+            "value": "Project Director",
+            "count": 7,
+            "pct": 14.0
+          },
+          {
+            "value": "Service Manager",
+            "count": 2,
+            "pct": 4.0
+          }
+        ],
+        "sample_values": [
+          "Field Technician",
+          "Project Director",
+          "Lead Engineer",
+          "Field Technician",
+          "Field Technician"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "YEARS_EXPERIENCE": {
+        "column": "YEARS_EXPERIENCE",
+        "total_rows": 50,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 22,
+        "distinct_ratio": 0.44,
+        "semantic_type": "text",
+        "top_values": [
+          {
+            "value": "21",
+            "count": 6,
+            "pct": 12.0
+          },
+          {
+            "value": "23",
+            "count": 5,
+            "pct": 10.0
+          },
+          {
+            "value": "13",
+            "count": 4,
+            "pct": 8.0
+          },
+          {
+            "value": "25",
+            "count": 3,
+            "pct": 6.0
+          },
+          {
+            "value": "22",
+            "count": 3,
+            "pct": 6.0
+          }
+        ],
+        "sample_values": [
+          "8",
+          "7",
+          "17",
+          "13",
+          "25"
+        ],
+        "sqlite_type": "INTEGER"
+      },
+      "PHONE": {
+        "column": "PHONE",
+        "total_rows": 50,
+        "null_count": 5,
+        "null_density": 0.1,
+        "distinct_count": 45,
+        "distinct_ratio": 0.9,
+        "semantic_type": "text",
+        "top_values": [
+          {
+            "value": "986-828-6974",
+            "count": 1,
+            "pct": 2.0
+          },
+          {
+            "value": "951.811.5673x38515",
+            "count": 1,
+            "pct": 2.0
+          },
+          {
+            "value": "903.360.6778",
+            "count": 1,
+            "pct": 2.0
+          },
+          {
+            "value": "8662002604",
+            "count": 1,
+            "pct": 2.0
+          },
+          {
+            "value": "832-750-8628",
+            "count": 1,
+            "pct": 2.0
+          }
+        ],
+        "sample_values": [
+          "495-824-5705x1557",
+          "320.371.5481x85133",
+          "678-800-9580x401",
+          "001-834-265-0275",
+          "5664788457"
+        ],
+        "sqlite_type": "TEXT"
+      }
+    }
+  },
+  "domain2.PRODUCT2_VW": {
+    "table": "PRODUCT2_VW",
+    "schema": "domain2",
+    "table_key": "domain2.PRODUCT2_VW",
+    "total_rows": 100,
+    "columns": {
+      "PRODUCT_ID": {
+        "column": "PRODUCT_ID",
+        "total_rows": 100,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 100,
+        "distinct_ratio": 1.0,
+        "semantic_type": "identifier",
+        "top_values": [
+          {
+            "value": "PRD-00100",
+            "count": 1,
+            "pct": 1.0
+          },
+          {
+            "value": "PRD-00099",
+            "count": 1,
+            "pct": 1.0
+          },
+          {
+            "value": "PRD-00098",
+            "count": 1,
+            "pct": 1.0
+          },
+          {
+            "value": "PRD-00097",
+            "count": 1,
+            "pct": 1.0
+          },
+          {
+            "value": "PRD-00096",
+            "count": 1,
+            "pct": 1.0
+          }
+        ],
+        "sample_values": [
+          "PRD-00092",
+          "PRD-00068",
+          "PRD-00089",
+          "PRD-00033",
+          "PRD-00055"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "PART_NUMBER": {
+        "column": "PART_NUMBER",
+        "total_rows": 100,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 100,
+        "distinct_ratio": 1.0,
+        "semantic_type": "identifier",
+        "top_values": [
+          {
+            "value": "PN-9905-IHR-80",
+            "count": 1,
+            "pct": 1.0
+          },
+          {
+            "value": "PN-9881-ABN-92",
+            "count": 1,
+            "pct": 1.0
+          },
+          {
+            "value": "PN-9799-HZP-25",
+            "count": 1,
+            "pct": 1.0
+          },
+          {
+            "value": "PN-9736-RCU-65",
+            "count": 1,
+            "pct": 1.0
+          },
+          {
+            "value": "PN-9591-ALJ-26",
+            "count": 1,
+            "pct": 1.0
+          }
+        ],
+        "sample_values": [
+          "PN-2789-XPK-88",
+          "PN-4991-BOH-96",
+          "PN-3043-NHH-76",
+          "PN-6134-EOF-09",
+          "PN-1694-OSK-35"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "NAME": {
+        "column": "NAME",
+        "total_rows": 100,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 100,
+        "distinct_ratio": 1.0,
+        "semantic_type": "free_text",
+        "top_values": [
+          {
+            "value": "Turbine Seal Kit (85O)",
+            "count": 1,
+            "pct": 1.0
+          },
+          {
+            "value": "Turbine Seal Kit (84S)",
+            "count": 1,
+            "pct": 1.0
+          },
+          {
+            "value": "Turbine Seal Kit (72O)",
+            "count": 1,
+            "pct": 1.0
+          },
+          {
+            "value": "Turbine Seal Kit (49Y)",
+            "count": 1,
+            "pct": 1.0
+          },
+          {
+            "value": "Turbine Seal Kit (36H)",
+            "count": 1,
+            "pct": 1.0
+          }
+        ],
+        "sample_values": [
+          "Preventive Maintenance Contract (38O)",
+          "Compressor Blade Set v4 (02Z)",
+          "Cybersecurity Firmware Patch (23Q)",
+          "Omnivise T3000 Control Upgrade (52Q)",
+          "Generator Stator Winding (77K)"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "PRODUCT_FAMILY": {
+        "column": "PRODUCT_FAMILY",
+        "total_rows": 100,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 3,
+        "distinct_ratio": 0.03,
+        "semantic_type": "enum",
+        "top_values": [
+          {
+            "value": "Hardware Spare",
+            "count": 51,
+            "pct": 51.0
+          },
+          {
+            "value": "Software/Digital",
+            "count": 28,
+            "pct": 28.0
+          },
+          {
+            "value": "Service Contract",
+            "count": 21,
+            "pct": 21.0
+          }
+        ],
+        "sample_values": [
+          "Hardware Spare",
+          "Hardware Spare",
+          "Hardware Spare",
+          "Hardware Spare",
+          "Hardware Spare"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "UNIT_COST_EUR": {
+        "column": "UNIT_COST_EUR",
+        "total_rows": 100,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 95,
+        "distinct_ratio": 0.95,
+        "semantic_type": "free_text",
+        "top_values": [
+          {
+            "value": "500.0",
+            "count": 6,
+            "pct": 6.0
+          },
+          {
+            "value": "81977.26",
+            "count": 1,
+            "pct": 1.0
+          },
+          {
+            "value": "74512.93",
+            "count": 1,
+            "pct": 1.0
+          },
+          {
+            "value": "66542.31",
+            "count": 1,
+            "pct": 1.0
+          },
+          {
+            "value": "54243.74",
+            "count": 1,
+            "pct": 1.0
+          }
+        ],
+        "sample_values": [
+          "34092.6",
+          "16757.99",
+          "3261.93",
+          "28647.78",
+          "27318.82"
+        ],
+        "sqlite_type": "REAL"
+      },
+      "LEAD_TIME_DAYS": {
+        "column": "LEAD_TIME_DAYS",
+        "total_rows": 100,
+        "null_count": 12,
+        "null_density": 0.12,
+        "distinct_count": 68,
+        "distinct_ratio": 0.68,
+        "semantic_type": "datetime",
+        "top_values": [
+          {
+            "value": "111.0",
+            "count": 2,
+            "pct": 2.0
+          },
+          {
+            "value": "109.0",
+            "count": 2,
+            "pct": 2.0
+          },
+          {
+            "value": "108.0",
+            "count": 2,
+            "pct": 2.0
+          },
+          {
+            "value": "107.0",
+            "count": 2,
+            "pct": 2.0
+          },
+          {
+            "value": "105.0",
+            "count": 2,
+            "pct": 2.0
+          }
+        ],
+        "sample_values": [
+          "5.0",
+          "55.0",
+          "62.0",
+          "30.0",
+          "101.0"
+        ],
+        "sqlite_type": "REAL"
+      },
+      "STOCK_AVAILABLE": {
+        "column": "STOCK_AVAILABLE",
+        "total_rows": 100,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 43,
+        "distinct_ratio": 0.43,
+        "semantic_type": "text",
+        "top_values": [
+          {
+            "value": "18",
+            "count": 6,
+            "pct": 6.0
+          },
+          {
+            "value": "37",
+            "count": 5,
+            "pct": 5.0
+          },
+          {
+            "value": "33",
+            "count": 5,
+            "pct": 5.0
+          },
+          {
+            "value": "49",
+            "count": 4,
+            "pct": 4.0
+          },
+          {
+            "value": "31",
+            "count": 4,
+            "pct": 4.0
+          }
+        ],
+        "sample_values": [
+          "1",
+          "48",
+          "37",
+          "38",
+          "5"
+        ],
+        "sqlite_type": "INTEGER"
+      },
+      "COMPATIBILITY": {
+        "column": "COMPATIBILITY",
+        "total_rows": 100,
+        "null_count": 14,
+        "null_density": 0.14,
+        "distinct_count": 6,
+        "distinct_ratio": 0.06,
+        "semantic_type": "text",
+        "top_values": [
+          {
+            "value": "Gas Turbine",
+            "count": 22,
+            "pct": 22.0
+          },
+          {
+            "value": "Steam Turbine",
+            "count": 20,
+            "pct": 20.0
+          },
+          {
+            "value": "Wind Generator",
+            "count": 13,
+            "pct": 13.0
+          },
+          {
+            "value": "Substation Switch",
+            "count": 12,
+            "pct": 12.0
+          },
+          {
+            "value": "Solar Inverter",
+            "count": 11,
+            "pct": 11.0
+          }
+        ],
+        "sample_values": [
+          "Steam Turbine",
+          "Steam Turbine",
+          "Wind Generator",
+          "Gas Turbine",
+          "Steam Turbine"
+        ],
+        "sqlite_type": "TEXT"
+      }
+    }
+  },
+  "domain2.CAMPAIGN_VW": {
+    "table": "CAMPAIGN_VW",
+    "schema": "domain2",
+    "table_key": "domain2.CAMPAIGN_VW",
+    "total_rows": 30,
+    "columns": {
+      "CAMPAIGN_ID": {
+        "column": "CAMPAIGN_ID",
+        "total_rows": 30,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 30,
+        "distinct_ratio": 1.0,
+        "semantic_type": "identifier",
+        "top_values": [
+          {
+            "value": "CMP-0030",
+            "count": 1,
+            "pct": 3.33
+          },
+          {
+            "value": "CMP-0029",
+            "count": 1,
+            "pct": 3.33
+          },
+          {
+            "value": "CMP-0028",
+            "count": 1,
+            "pct": 3.33
+          },
+          {
+            "value": "CMP-0027",
+            "count": 1,
+            "pct": 3.33
+          },
+          {
+            "value": "CMP-0026",
+            "count": 1,
+            "pct": 3.33
+          }
+        ],
+        "sample_values": [
+          "CMP-0006",
+          "CMP-0004",
+          "CMP-0020",
+          "CMP-0014",
+          "CMP-0028"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "CAMPAIGN_NAME": {
+        "column": "CAMPAIGN_NAME",
+        "total_rows": 30,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 30,
+        "distinct_ratio": 1.0,
+        "semantic_type": "free_text",
+        "top_values": [
+          {
+            "value": "Vibration Monitoring Rollout",
+            "count": 1,
+            "pct": 3.33
+          },
+          {
+            "value": "Thermal Efficiency Improvement Drive",
+            "count": 1,
+            "pct": 3.33
+          },
+          {
+            "value": "Substation Automation Upgrade",
+            "count": 1,
+            "pct": 3.33
+          },
+          {
+            "value": "SWT Wind Fleet Performance Review",
+            "count": 1,
+            "pct": 3.33
+          },
+          {
+            "value": "SGT-800 Life Extension Campaign",
+            "count": 1,
+            "pct": 3.33
+          }
+        ],
+        "sample_values": [
+          "Cybersecurity Firmware Patch for Gas Controls",
+          "Power Factor Correction Initiative",
+          "Substation Automation Upgrade",
+          "High Voltage System Modernisation",
+          "SWT Wind Fleet Performance Review"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "OWNER_ID": {
+        "column": "OWNER_ID",
+        "total_rows": 30,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 20,
+        "distinct_ratio": 0.6667,
+        "semantic_type": "text",
+        "top_values": [
+          {
+            "value": "USR-0017",
+            "count": 4,
+            "pct": 13.33
+          },
+          {
+            "value": "USR-0025",
+            "count": 3,
+            "pct": 10.0
+          },
+          {
+            "value": "USR-0004",
+            "count": 3,
+            "pct": 10.0
+          },
+          {
+            "value": "USR-0039",
+            "count": 2,
+            "pct": 6.67
+          },
+          {
+            "value": "USR-0007",
+            "count": 2,
+            "pct": 6.67
+          }
+        ],
+        "sample_values": [
+          "USR-0004",
+          "USR-0039",
+          "USR-0012",
+          "USR-0048",
+          "USR-0022"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "OBJECTIVE": {
+        "column": "OBJECTIVE",
+        "total_rows": 30,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 5,
+        "distinct_ratio": 0.1667,
+        "semantic_type": "text",
+        "top_values": [
+          {
+            "value": "Cost Reduction",
+            "count": 8,
+            "pct": 26.67
+          },
+          {
+            "value": "Regulatory Compliance",
+            "count": 7,
+            "pct": 23.33
+          },
+          {
+            "value": "Safety Compliance",
+            "count": 6,
+            "pct": 20.0
+          },
+          {
+            "value": "Life Extension",
+            "count": 6,
+            "pct": 20.0
+          },
+          {
+            "value": "Efficiency Gain",
+            "count": 3,
+            "pct": 10.0
+          }
+        ],
+        "sample_values": [
+          "Life Extension",
+          "Cost Reduction",
+          "Safety Compliance",
+          "Regulatory Compliance",
+          "Regulatory Compliance"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "BUDGET_EUR": {
+        "column": "BUDGET_EUR",
+        "total_rows": 30,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 30,
+        "distinct_ratio": 1.0,
+        "semantic_type": "free_text",
+        "top_values": [
+          {
+            "value": "4922624.49",
+            "count": 1,
+            "pct": 3.33
+          },
+          {
+            "value": "4919334.69",
+            "count": 1,
+            "pct": 3.33
+          },
+          {
+            "value": "4732231.38",
+            "count": 1,
+            "pct": 3.33
+          },
+          {
+            "value": "4672303.85",
+            "count": 1,
+            "pct": 3.33
+          },
+          {
+            "value": "4189694.55",
+            "count": 1,
+            "pct": 3.33
+          }
+        ],
+        "sample_values": [
+          "3679251.53",
+          "2603271.54",
+          "4922624.49",
+          "3827955.1",
+          "988192.43"
+        ],
+        "sqlite_type": "REAL"
+      },
+      "STATUS": {
+        "column": "STATUS",
+        "total_rows": 30,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 3,
+        "distinct_ratio": 0.1,
+        "semantic_type": "text",
+        "top_values": [
+          {
+            "value": "Active",
+            "count": 15,
+            "pct": 50.0
+          },
+          {
+            "value": "Completed",
+            "count": 10,
+            "pct": 33.33
+          },
+          {
+            "value": "Planning",
+            "count": 5,
+            "pct": 16.67
+          }
+        ],
+        "sample_values": [
+          "Completed",
+          "Active",
+          "Completed",
+          "Active",
+          "Active"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "START_DATE": {
+        "column": "START_DATE",
+        "total_rows": 30,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 29,
+        "distinct_ratio": 0.9667,
+        "semantic_type": "free_text",
+        "top_values": [
+          {
+            "value": "2023-03-27",
+            "count": 2,
+            "pct": 6.67
+          },
+          {
+            "value": "2024-05-20",
+            "count": 1,
+            "pct": 3.33
+          },
+          {
+            "value": "2024-05-16",
+            "count": 1,
+            "pct": 3.33
+          },
+          {
+            "value": "2024-04-08",
+            "count": 1,
+            "pct": 3.33
+          },
+          {
+            "value": "2024-03-19",
+            "count": 1,
+            "pct": 3.33
+          }
+        ],
+        "sample_values": [
+          "2023-01-11",
+          "2024-03-06",
+          "2023-12-08",
+          "2024-03-19",
+          "2023-12-04"
+        ],
+        "sqlite_type": "DATE"
+      },
+      "END_DATE": {
+        "column": "END_DATE",
+        "total_rows": 30,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 28,
+        "distinct_ratio": 0.9333,
+        "semantic_type": "free_text",
+        "top_values": [
+          {
+            "value": "2025-02-09",
+            "count": 2,
+            "pct": 6.67
+          },
+          {
+            "value": "2023-07-25",
+            "count": 2,
+            "pct": 6.67
+          },
+          {
+            "value": "2025-08-21",
+            "count": 1,
+            "pct": 3.33
+          },
+          {
+            "value": "2025-08-12",
+            "count": 1,
+            "pct": 3.33
+          },
+          {
+            "value": "2025-07-05",
+            "count": 1,
+            "pct": 3.33
+          }
+        ],
+        "sample_values": [
+          "2024-08-12",
+          "2025-05-10",
+          "2025-02-09",
+          "2025-04-28",
+          "2023-07-25"
+        ],
+        "sqlite_type": "DATE"
+      },
+      "REGION": {
+        "column": "REGION",
+        "total_rows": 30,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 4,
+        "distinct_ratio": 0.1333,
+        "semantic_type": "text",
+        "top_values": [
+          {
+            "value": "APAC",
+            "count": 11,
+            "pct": 36.67
+          },
+          {
+            "value": "Americas",
+            "count": 9,
+            "pct": 30.0
+          },
+          {
+            "value": "EMEA",
+            "count": 6,
+            "pct": 20.0
+          },
+          {
+            "value": "Global",
+            "count": 4,
+            "pct": 13.33
+          }
+        ],
+        "sample_values": [
+          "Global",
+          "APAC",
+          "Americas",
+          "EMEA",
+          "APAC"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "APPROVED_BY": {
+        "column": "APPROVED_BY",
+        "total_rows": 30,
+        "null_count": 2,
+        "null_density": 0.0667,
+        "distinct_count": 10,
+        "distinct_ratio": 0.3333,
+        "semantic_type": "text",
+        "top_values": [
+          {
+            "value": "DIR-001",
+            "count": 6,
+            "pct": 20.0
+          },
+          {
+            "value": "DIR-004",
+            "count": 4,
+            "pct": 13.33
+          },
+          {
+            "value": "DIR-009",
+            "count": 3,
+            "pct": 10.0
+          },
+          {
+            "value": "DIR-007",
+            "count": 3,
+            "pct": 10.0
+          },
+          {
+            "value": "DIR-006",
+            "count": 3,
+            "pct": 10.0
+          }
+        ],
+        "sample_values": [
+          "DIR-004",
+          "DIR-007",
+          "DIR-006",
+          "DIR-005",
+          "DIR-010"
+        ],
+        "sqlite_type": "TEXT"
+      }
+    }
+  },
+  "domain2.EVENT_VW": {
+    "table": "EVENT_VW",
+    "schema": "domain2",
+    "table_key": "domain2.EVENT_VW",
+    "total_rows": 500,
+    "columns": {
+      "EVENT_ID": {
+        "column": "EVENT_ID",
+        "total_rows": 500,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 500,
+        "distinct_ratio": 1.0,
+        "semantic_type": "identifier",
+        "top_values": [
+          {
+            "value": "EVT-000500",
+            "count": 1,
+            "pct": 0.2
+          },
+          {
+            "value": "EVT-000499",
+            "count": 1,
+            "pct": 0.2
+          },
+          {
+            "value": "EVT-000498",
+            "count": 1,
+            "pct": 0.2
+          },
+          {
+            "value": "EVT-000497",
+            "count": 1,
+            "pct": 0.2
+          },
+          {
+            "value": "EVT-000496",
+            "count": 1,
+            "pct": 0.2
+          }
+        ],
+        "sample_values": [
+          "EVT-000339",
+          "EVT-000008",
+          "EVT-000357",
+          "EVT-000266",
+          "EVT-000143"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "CAMPAIGN_ID": {
+        "column": "CAMPAIGN_ID",
+        "total_rows": 500,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 30,
+        "distinct_ratio": 0.06,
+        "semantic_type": "text",
+        "top_values": [
+          {
+            "value": "CMP-0026",
+            "count": 25,
+            "pct": 5.0
+          },
+          {
+            "value": "CMP-0004",
+            "count": 24,
+            "pct": 4.8
+          },
+          {
+            "value": "CMP-0011",
+            "count": 21,
+            "pct": 4.2
+          },
+          {
+            "value": "CMP-0023",
+            "count": 20,
+            "pct": 4.0
+          },
+          {
+            "value": "CMP-0018",
+            "count": 20,
+            "pct": 4.0
+          }
+        ],
+        "sample_values": [
+          "CMP-0005",
+          "CMP-0011",
+          "CMP-0022",
+          "CMP-0002",
+          "CMP-0027"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "PRODUCT_ID": {
+        "column": "PRODUCT_ID",
+        "total_rows": 500,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 100,
+        "distinct_ratio": 0.2,
+        "semantic_type": "text",
+        "top_values": [
+          {
+            "value": "PRD-00098",
+            "count": 13,
+            "pct": 2.6
+          },
+          {
+            "value": "PRD-00020",
+            "count": 10,
+            "pct": 2.0
+          },
+          {
+            "value": "PRD-00095",
+            "count": 9,
+            "pct": 1.8
+          },
+          {
+            "value": "PRD-00071",
+            "count": 9,
+            "pct": 1.8
+          },
+          {
+            "value": "PRD-00067",
+            "count": 9,
+            "pct": 1.8
+          }
+        ],
+        "sample_values": [
+          "PRD-00067",
+          "PRD-00069",
+          "PRD-00095",
+          "PRD-00023",
+          "PRD-00053"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "EVENT_TYPE": {
+        "column": "EVENT_TYPE",
+        "total_rows": 500,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 6,
+        "distinct_ratio": 0.012,
+        "semantic_type": "enum",
+        "top_values": [
+          {
+            "value": "Parts Delivery",
+            "count": 125,
+            "pct": 25.0
+          },
+          {
+            "value": "Software Deployment",
+            "count": 106,
+            "pct": 21.2
+          },
+          {
+            "value": "Site Audit",
+            "count": 97,
+            "pct": 19.4
+          },
+          {
+            "value": "Engineering Milestone",
+            "count": 80,
+            "pct": 16.0
+          },
+          {
+            "value": "Training Session",
+            "count": 47,
+            "pct": 9.4
+          }
+        ],
+        "sample_values": [
+          "Training Session",
+          "Site Audit",
+          "Software Deployment",
+          "Site Audit",
+          "Site Audit"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "PLANNED_DATE": {
+        "column": "PLANNED_DATE",
+        "total_rows": 500,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 429,
+        "distinct_ratio": 0.858,
+        "semantic_type": "datetime",
+        "top_values": [
+          {
+            "value": "2023-11-16",
+            "count": 4,
+            "pct": 0.8
+          },
+          {
+            "value": "2022-12-15",
+            "count": 4,
+            "pct": 0.8
+          },
+          {
+            "value": "2024-01-30",
+            "count": 3,
+            "pct": 0.6
+          },
+          {
+            "value": "2023-03-04",
+            "count": 3,
+            "pct": 0.6
+          },
+          {
+            "value": "2022-08-12",
+            "count": 3,
+            "pct": 0.6
+          }
+        ],
+        "sample_values": [
+          "2024-03-21",
+          "2023-06-06",
+          "2025-02-09",
+          "2024-10-19",
+          "2022-01-07"
+        ],
+        "sqlite_type": "DATE"
+      },
+      "EXECUTION_STATUS": {
+        "column": "EXECUTION_STATUS",
+        "total_rows": 500,
+        "null_count": 0,
+        "null_density": 0.0,
+        "distinct_count": 3,
+        "distinct_ratio": 0.006,
+        "semantic_type": "enum",
+        "top_values": [
+          {
+            "value": "Completed",
+            "count": 262,
+            "pct": 52.4
+          },
+          {
+            "value": "Scheduled",
+            "count": 172,
+            "pct": 34.4
+          },
+          {
+            "value": "Delayed",
+            "count": 66,
+            "pct": 13.2
+          }
+        ],
+        "sample_values": [
+          "Completed",
+          "Completed",
+          "Scheduled",
+          "Scheduled",
+          "Completed"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "ASSIGNED_ENGINEER": {
+        "column": "ASSIGNED_ENGINEER",
+        "total_rows": 500,
+        "null_count": 92,
+        "null_density": 0.184,
+        "distinct_count": 50,
+        "distinct_ratio": 0.1,
+        "semantic_type": "text",
+        "top_values": [
+          {
+            "value": "USR-0017",
+            "count": 13,
+            "pct": 2.6
+          },
+          {
+            "value": "USR-0013",
+            "count": 13,
+            "pct": 2.6
+          },
+          {
+            "value": "USR-0049",
+            "count": 12,
+            "pct": 2.4
+          },
+          {
+            "value": "USR-0046",
+            "count": 12,
+            "pct": 2.4
+          },
+          {
+            "value": "USR-0044",
+            "count": 12,
+            "pct": 2.4
+          }
+        ],
+        "sample_values": [
+          "USR-0003",
+          "USR-0035",
+          "USR-0046",
+          "USR-0030",
+          "USR-0013"
+        ],
+        "sqlite_type": "TEXT"
+      },
+      "ACTUAL_DATE": {
+        "column": "ACTUAL_DATE",
+        "total_rows": 500,
+        "null_count": 171,
+        "null_density": 0.342,
+        "distinct_count": 297,
+        "distinct_ratio": 0.594,
+        "semantic_type": "datetime",
+        "top_values": [
+          {
+            "value": "2024-03-08",
+            "count": 3,
+            "pct": 0.6
+          },
+          {
+            "value": "2023-12-30",
+            "count": 3,
+            "pct": 0.6
+          },
+          {
+            "value": "2023-02-25",
+            "count": 3,
+            "pct": 0.6
+          },
+          {
+            "value": "2023-02-08",
+            "count": 3,
+            "pct": 0.6
+          },
+          {
+            "value": "2024-12-02",
+            "count": 2,
+            "pct": 0.4
+          }
+        ],
+        "sample_values": [
+          "2023-02-14",
+          "2021-12-29",
+          "2024-09-29",
+          "2024-04-15",
+          "2021-08-12"
+        ],
+        "sqlite_type": "DATE"
+      },
+      "COST_EUR": {
+        "column": "COST_EUR",
+        "total_rows": 500,
+        "null_count": 122,
+        "null_density": 0.244,
+        "distinct_count": 372,
+        "distinct_ratio": 0.744,
+        "semantic_type": "metric",
+        "top_values": [
+          {
+            "value": "100.0",
+            "count": 7,
+            "pct": 1.4
+          },
+          {
+            "value": "37336.38",
+            "count": 1,
+            "pct": 0.2
+          },
+          {
+            "value": "21829.46",
+            "count": 1,
+            "pct": 0.2
+          },
+          {
+            "value": "21614.1",
+            "count": 1,
+            "pct": 0.2
+          },
+          {
+            "value": "21322.63",
+            "count": 1,
+            "pct": 0.2
+          }
+        ],
+        "sample_values": [
+          "3931.87",
+          "560.62",
+          "2109.31",
+          "5421.13",
+          "21322.63"
+        ],
+        "sqlite_type": "REAL"
+      },
+      "NOTES": {
+        "column": "NOTES",
+        "total_rows": 500,
+        "null_count": 148,
+        "null_density": 0.296,
+        "distinct_count": 352,
+        "distinct_ratio": 0.704,
+        "semantic_type": "text",
+        "top_values": [
+          {
+            "value": "Yourself reflect with performance rate.",
+            "count": 1,
+            "pct": 0.2
+          },
+          {
+            "value": "Your season rest sister station language family control wide.",
+            "count": 1,
+            "pct": 0.2
+          },
+          {
+            "value": "Yes allow field apply thus.",
+            "count": 1,
+            "pct": 0.2
+          },
+          {
+            "value": "Yeah owner his it item.",
+            "count": 1,
+            "pct": 0.2
+          },
+          {
+            "value": "Yard religious able cover door south hear inside.",
+            "count": 1,
+            "pct": 0.2
+          }
+        ],
+        "sample_values": [
+          "Me age national avoid last care piece beyond.",
+          "A tree avoid time physical test ahead.",
+          "Child close speak score adult information truth bit owner officer.",
+          "Audience yet reach institution institution road.",
+          "Stage church official security foot offer response entire strong will."
+        ],
+        "sqlite_type": "TEXT"
+      }
+    }
+  }
+}
